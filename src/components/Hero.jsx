@@ -5,11 +5,11 @@ export default function Hero() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/hero.jpg"
           alt="Hero"
           className="w-full h-full object-cover"
-        />
+        /> */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
