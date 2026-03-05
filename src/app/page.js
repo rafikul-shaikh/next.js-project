@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ProductCart from "@/components/ProductCart";
 import Footer from "@/components/Footer";
 import Specifications from "@/components/Specification";
+import Technology from "@/components/Technology";
 
 export default function Home() {
    return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <ProductCart/>
       <Specifications/>
+      <Technology/>
       <Footer/>
     </>
   );
