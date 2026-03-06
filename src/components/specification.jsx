@@ -35,7 +35,7 @@ export default function Specification() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full mt-20">
+    <section className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20">
       {/* Header */}
       <div className="border-b border-gray-400">
         <h2 className="text-lg font-semibold mb-20">Barrier Performance</h2>

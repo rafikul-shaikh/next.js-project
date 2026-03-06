@@ -3,15 +3,20 @@
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        {/* <img
-          src="/hero.jpg"
-          alt="Hero"
-          className="w-full h-full object-cover"
-        /> */}
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/background-vdo.mp4" type="video/mp4" />
+      </video>
+
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full text-center px-6">

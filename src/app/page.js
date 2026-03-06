@@ -4,6 +4,7 @@ import ProductCart from "@/components/ProductCart";
 import Footer from "@/components/Footer";
 import Specifications from "@/components/Specification";
 import Technology from "@/components/Technology";
+import Impact from "@/components/Impact";
 
 export default function Home() {
    return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ProductCart/>
       <Specifications/>
       <Technology/>
+      <Impact/>
       <Footer/>
     </>
   );
