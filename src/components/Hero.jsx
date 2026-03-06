@@ -49,10 +49,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full text-center px-10">
-        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold ">
+      <div className="absolute bottom-30  z-10 text-center px-40 ">
+        <h1 className="text-white text-2xl md:text-5xl font-semibold drop-shadow-lg">
           100% Curbside Recyclable, sealable, printable ultra high barrier
-          paper, designed to replace flexible plastic packaging.
+          paper,{" "}
+          <span className="text-gray-400">
+            designed to replace flexible plastic packaging.
+          </span>
         </h1>
       </div>
     </section>
