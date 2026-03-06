@@ -35,9 +35,26 @@ export default function Specification() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="bg-[#d7e5e8] px-16 py-16 rounded-lg max-w-full mt-20">
+    <section className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full mt-20">
       {/* Header */}
-      <h2 className="text-lg font-semibold mb-8">Barrier Performance</h2>
+      <div className="border-b border-gray-400">
+        <h2 className="text-lg font-semibold mb-20">Barrier Performance</h2>
+
+        <div className="tech-row">
+          <span className="tag">Moisture</span>
+          <p>&lt;0.3 g/m2/day WVTR (38°C, 90% RH)</p>
+        </div>
+
+        <div className="tech-row">
+          <span className="tag">Oxygen</span>
+          <p>&lt;1 cc/m2/day OTR (23°C, 50% RH)</p>
+        </div>
+
+        <div className="tech-row">
+          <span className="tag">Grease</span>
+          <p>Excellent resistance to grease and oils</p>
+        </div>
+      </div>
 
       {data.map((item, index) => (
         <div key={index} className="border-b border-gray-400">
