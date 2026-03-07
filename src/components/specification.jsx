@@ -88,7 +88,6 @@ export default function Specification() {
               <img src={item.icon} alt={item.title} className="w-5 h-5" />
               <p className="text-gray-800">{item.title}</p>
             </div>
-            {/* <p className="text-gray-800">{item.title}</p> */}
             <span className="text-xl">
               {open === index ? <FaChevronUp /> : <FaChevronDown />}
             </span>
