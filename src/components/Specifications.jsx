@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-export default function Specification() {
+export default function Specifications() {
   const data = [
     {
       title: "Fiber content",
@@ -53,25 +53,29 @@ export default function Specification() {
           <h2 className="text-lg font-semibold">Barrier Performance</h2>
         </div>
 
-        <div class=" p-6 rounded-lg  w-137.5 space-y-6">
-          <div class="flex items-center gap-6">
-            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+        <div className=" p-6 rounded-lg  w-137.5 space-y-6">
+          <div className="flex items-center gap-6">
+            <div className="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Moisture
             </div>
-            <p class="text-gray-700">&lt;0.3 g/m2/day WVTR (38°C, 90% RH)</p>
+            <p className="text-gray-700">
+              &lt;0.3 g/m2/day WVTR (38°C, 90% RH)
+            </p>
           </div>
-          <div class="flex items-center gap-6">
-            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+          <div className="flex items-center gap-6">
+            <div className="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Oxygen
             </div>
-            <p class="text-gray-700">&lt;1 cc/m2/day OTR (23°C, 50% RH)</p>
+            <p className="text-gray-700">&lt;1 cc/m2/day OTR (23°C, 50% RH)</p>
           </div>
 
-          <div class="flex items-center gap-6">
-            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+          <div className="flex items-center gap-6">
+            <div className="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Grease
             </div>
-            <p class="text-gray-700">Excellent resistance to grease and oils</p>
+            <p className="text-gray-700">
+              Excellent resistance to grease and oils
+            </p>
           </div>
         </div>
       </div>
