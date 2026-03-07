@@ -16,6 +16,7 @@ export default function Home() {
       <Technology/>
       <Impact/>
       <ContactSection/>
+      <Footer/>
     </>
   );
 }

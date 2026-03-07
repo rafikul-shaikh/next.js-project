@@ -53,7 +53,7 @@ export default function Specification() {
           <h2 className="text-lg font-semibold">Barrier Performance</h2>
         </div>
 
-        <div class=" p-6 rounded-lg shadow-md w-137.5 space-y-6">
+        <div class=" p-6 rounded-lg  w-137.5 space-y-6">
           <div class="flex items-center gap-6">
             <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Moisture
