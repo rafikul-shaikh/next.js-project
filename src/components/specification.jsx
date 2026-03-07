@@ -37,22 +37,37 @@ export default function Specification() {
   return (
     <section className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20">
       {/* Header */}
-      <div className="border-b border-gray-400">
-        <h2 className="text-lg font-semibold mb-20">Barrier Performance</h2>
+      <div className="flex justify-between  border-b border-gray-400">
+        <div className="flex items-center gap-3">
+          <img
+            src="https://nfinitepaper.com/cdn/e3d8c4e92a1bd81ff46619d8647885be3f59e496-24x24.svg?auto=format"
+            alt=""
+            className="w-6 h-6"
+          />
 
-        <div className="tech-row">
-          <span className="tag">Moisture</span>
-          <p>&lt;0.3 g/m2/day WVTR (38°C, 90% RH)</p>
+          <h2 className="text-lg font-semibold">Barrier Performance</h2>
         </div>
 
-        <div className="tech-row">
-          <span className="tag">Oxygen</span>
-          <p>&lt;1 cc/m2/day OTR (23°C, 50% RH)</p>
-        </div>
+        <div class=" p-6 rounded-lg shadow-md w-137.5 space-y-6">
+          <div class="flex items-center gap-6">
+            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+              Moisture
+            </div>
+            <p class="text-gray-700">&lt;0.3 g/m2/day WVTR (38°C, 90% RH)</p>
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+              Oxygen
+            </div>
+            <p class="text-gray-700">&lt;1 cc/m2/day OTR (23°C, 50% RH)</p>
+          </div>
 
-        <div className="tech-row">
-          <span className="tag">Grease</span>
-          <p>Excellent resistance to grease and oils</p>
+          <div class="flex items-center gap-6">
+            <div class="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
+              Grease
+            </div>
+            <p class="text-gray-700">Excellent resistance to grease and oils</p>
+          </div>
         </div>
       </div>
 

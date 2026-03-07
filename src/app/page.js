@@ -14,7 +14,6 @@ export default function Home() {
       <Specifications/>
       <Technology/>
       <Impact/>
-      <Footer/>
     </>
   );
 }
