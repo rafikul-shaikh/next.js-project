@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-export default function Specification() {
+export default function Specifications() {
   const data = [
     {
       title: "Fiber content",
