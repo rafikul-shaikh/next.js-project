@@ -31,17 +31,8 @@ export default function About() {
 
         {/* IMAGE */}
         <div className="col-span-6 flex justify-end">
-          <div className="relative w-130 h-130 rounded-lg overflow-hidden">
-            <img
-              src="https://nfinitepaper.com/cdn/4087dcc9d6d08b4ca816b….5&fp-y=0.5&w=480&h=600&q=90&fit=crop&auto=format"
-              alt="Lab"
-              fill
-              className="object-cover"
-            />
-            {/* <img
-              src="https://nfinitepaper.com/cdn/4087dcc9d6d08b4ca816b….5&fp-y=0.5&w=480&h=600&q=90&fit=crop&auto=format"
-              alt=""
-            /> */}
+          <div className="relative w-125 h-150 rounded-lg overflow-hidden">
+            <img src="/Lab.avif" alt="Lab" fill className="object-cover" />
           </div>
         </div>
       </div>

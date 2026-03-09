@@ -40,8 +40,7 @@ export default function News() {
       title:
         "The role it could play in tackling small-format flexible plastic pollution in markets with high leakage rates",
       date: "EMF report - March 10th",
-      image:
-        "https://nfinitepaper.com/cdn/59232bfab99d3e9001ce1…5&fp-y=0.5&w=960&h=1136&q=90&fit=crop&auto=format",
+      image: "/image-2.jpg",
     },
   ];
 
@@ -61,7 +60,7 @@ export default function News() {
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-[600px] h-[420px] rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105"
+            className="group min-w-[550px] h-[650px] rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105"
           >
             {/* Image */}
             <img
