@@ -7,6 +7,7 @@ import ContactSection from "@/components/ContactSection";
 import Specifications from "@/components/Specifications";
 import OrbitImpact from "@/components/OrbitImpact";
 import OurNews from "@/components/OurNews";
+import About from "@/components/About";
 
 
 export default function Home() {
@@ -18,7 +19,8 @@ export default function Home() {
       <Technology/>
      <OrbitImpact/>
      <OurNews/>
-      <ContactSection/>
+     <About/>
+     <ContactSection/>
       <Footer/>
     </>
   );
