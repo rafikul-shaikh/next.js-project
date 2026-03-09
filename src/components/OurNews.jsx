@@ -1,6 +1,22 @@
 "use client";
+import { useRef } from "react";
+import { MoveLeft, MoveRight, ChevronRight } from "lucide-react";
 
 export default function News() {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 624; // Card width (600) + gap (24)
+
+      if (direction === "left") {
+        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }
+  };
   const news = [
     {
       title:
@@ -20,6 +36,13 @@ export default function News() {
       date: "Press release - May 14, 2024",
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     },
+    {
+      title:
+        "The role it could play in tackling small-format flexible plastic pollution in markets with high leakage rates",
+      date: "EMF report - March 10th",
+      image:
+        "https://nfinitepaper.com/cdn/59232bfab99d3e9001ce1…5&fp-y=0.5&w=960&h=1136&q=90&fit=crop&auto=format",
+    },
   ];
 
   return (
@@ -31,7 +54,10 @@ export default function News() {
       </div>
 
       {/* Slider */}
-      <div className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+      >
         {news.map((item, index) => (
           <div
             key={index}
@@ -54,11 +80,30 @@ export default function News() {
             </div>
 
             {/* Arrow Button */}
-            <div className="absolute bottom-6 right-6 bg-white text-black w-8 h-8 flex items-center justify-center rounded-sm opacity-0 group-hover:opacity-100 transition">
-              →
+            {/* <div className="absolute bottom-6 right-6 bg-white text-black w-8 h-8 flex items-center justify-center rounded-sm opacity-0 group-hover:opacity-100 transition">
+              <ChevronRight />
+            </div> */}
+            <div className="absolute bottom-6 right-6 bg-white text-black w-10 h-10 flex items-center justify-center rounded-sm transition group-hover:bg-cyan-500 group-hover:text-white">
+              <ChevronRight />
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 5. Navigation Buttons (Bottom Right) */}
+      <div className="flex justify-end gap-2 mt-8">
+        <button
+          onClick={() => scroll("left")}
+          className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <MoveLeft size={20} className="text-gray-600" />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <MoveRight size={20} className="text-gray-600" />
+        </button>
       </div>
     </section>
   );
