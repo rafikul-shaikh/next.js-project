@@ -37,9 +37,9 @@ export default function News() {
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     },
     {
-      title:
-        "The role it could play in tackling small-format flexible plastic pollution in markets with high leakage rates",
-      date: "EMF report - March 10th",
+      title: "EMF report - March 10th",
+      // "The role it could play in tackling small-format flexible plastic pollution in markets with high leakage rates",
+      // date: "EMF report - March 10th",
       image: "/image-2.jpg",
     },
   ];

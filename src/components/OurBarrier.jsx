@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 export default function OurBarrier() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(0);
 
   const faqs = [
     {
@@ -57,25 +57,71 @@ export default function OurBarrier() {
         </p>
       </div>
 
-      <div className="px-4 py-20">
-        <p className="w-2xl text-3xl md:text-5xl font-semibold">
-          "Nfinite shares our commitment to creating a circular economy, and we
-          look forward to continuing to work with them to develop innovative
-          ways to deliver more sustainable packaging solutions."
-        </p>
-        <div className="py-15">
-          <h1>FRANK LEHMANN</h1>
-          <p className="text-gray-500">
-            Vice President Corporate Venturing and Open Innovation of Amcor
+      {/* Horizontal Scrolling with snap section */}
+      <section className="flex overflow-x-auto snap-x snap-mandatory w-full scroll-smooth no-scrollbar">
+        <div className="min-w-full snap-center px-4 py-20">
+          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+            "Nfinite shares our commitment to creating a circular economy, and
+            we look forward to continuing to work with them to develop
+            innovative ways to deliver more sustainable packaging solutions."
           </p>
+          <div className="py-15">
+            <h1>FRANK LEHMANN</h1>
+            <p className="text-gray-500">
+              Vice President Corporate Venturing and Open Innovation of Amcor
+            </p>
+          </div>
         </div>
-      </div>
-      <section className="border-t border-gray-300">
+        <div className="min-w-full snap-center px-4 py-20">
+          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+            "PepsiCo R&D started working with the Nfinite team while they were
+            at the University of Waterloo, and in the short span of two years,
+            they have made rapid progress from lab-scale technology to actual
+            roll-to-roll coating implementation at different scales."
+          </p>
+          <div className="py-15">
+            <h1>Sridevi Narayan-Sarathy</h1>
+            <p className="text-gray-500">
+              Technical Director / R&D Senior Fellow at PepsiCo
+            </p>
+          </div>
+        </div>
+        <div className="min-w-full snap-center px-4 py-20">
+          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+            "Amcor is excited to be both an early-stage investor and a strategic
+            collaboration partner to Nfinite on this ground breaking project."
+          </p>
+          <div className="py-15">
+            <h1>Michael Hartman</h1>
+            <p className="text-gray-500">
+              Senior Fellow, Emerging Material/Process Development at Amcor
+            </p>
+          </div>
+        </div>
+        <div className="min-w-full snap-center px-4 py-20">
+          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+            "We are collaborating with partners like Nfinite to develop the next
+            generation of recyclable and compostable flexible packaging with
+            ultra-thin barrier coatings that meet the performance needs of our
+            broad portfolio."
+          </p>
+          <div className="py-15">
+            <h1>Mark Newman</h1>
+            <p className="text-gray-500">
+              Head of Packaging, Advanced Materials at Unilever
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* FAQ section  */}
+      <section className="border-t border-b border-gray-300">
         <div className="grid grid-cols-2 min-h-[600px]">
           {/* LEFT SIDE */}
           <div className="flex items-center justify-center px-20 border-r border-gray-300">
             <div className="text-center max-w-xl">
-              <span className="border px-3 py-1 text-xs rounded">FAQ</span>
+              <span className="font-semibold border px-3 py-1 text-xs rounded">
+                FAQ
+              </span>
 
               <h2 className="text-4xl mt-8 leading-tight font-medium">
                 Here are the essentials about Nfinite paper, how it works, and
@@ -102,7 +148,7 @@ export default function OurBarrier() {
                 </button>
 
                 {open === index && (
-                  <div className="px-10 pb-8 text-gray-600 max-w-xl">
+                  <div className="px-10 pb-22 text-gray-600 max-w-xl">
                     {item.answer}
                   </div>
                 )}
