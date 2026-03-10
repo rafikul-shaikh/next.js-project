@@ -5,10 +5,10 @@ import Technology from "@/components/Technology";
 import ProductScroll from "@/components/ProductScroll";
 import ContactSection from "@/components/ContactSection";
 import Specifications from "@/components/Specifications";
-import OrbitImpact from "@/components/OrbitImpact";
 import OurNews from "@/components/OurNews";
 import About from "@/components/About";
 import OurBarrier from "@/components/OurBarrier";
+import OrbitSection from "@/components/OrbitSection";
 
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       <ProductScroll />
       <Specifications/>
       <Technology/>
-     <OrbitImpact/>
+     <OrbitSection/>
      <OurBarrier/>
      <OurNews/>
      <About/>
