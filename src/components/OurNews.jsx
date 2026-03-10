@@ -60,7 +60,7 @@ export default function News() {
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-[550px] h-[650px] rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105"
+            className="group min-w-137.5 h-162.5 rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105"
           >
             {/* Image */}
             <img
@@ -70,7 +70,7 @@ export default function News() {
             />
 
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
 
             {/* Text */}
             <div className="absolute bottom-6 left-6 text-white max-w-md">

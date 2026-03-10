@@ -74,7 +74,7 @@ export default function Navbar() {
 
       {/* Contact Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[650px] bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
+        className={`fixed top-0 right-0 h-full w-162.5 bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
