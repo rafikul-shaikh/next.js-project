@@ -8,6 +8,7 @@ import Specifications from "@/components/Specifications";
 import OrbitImpact from "@/components/OrbitImpact";
 import OurNews from "@/components/OurNews";
 import About from "@/components/About";
+import OurBarrier from "@/components/OurBarrier";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Specifications/>
       <Technology/>
      <OrbitImpact/>
+     <OurBarrier/>
      <OurNews/>
      <About/>
      <ContactSection/>
