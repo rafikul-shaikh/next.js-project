@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import { X } from "lucide-react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -53,10 +56,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Contact Button */}
-          {/* <button className="h-11 px-6 text-[13px] bg-[#c7e6f5] text-black hover:bg-black hover:text-white transition-all duration-300 rounded">
-            Contact us
-          </button> */}
           <button
             onClick={() => setOpen(true)}
             className="h-11 px-6 text-[13px] bg-[#c7e6f5] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
@@ -75,29 +74,33 @@ export default function Navbar() {
 
       {/* Contact Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[420px] bg-white text-black z-50 transform transition-transform duration-500 ${
+        className={`fixed top-0 right-0 h-full w-[650px] bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center p-6">
+        <div className="flex justify-between items-center p-6 mb-10">
           <h2 className="text-3xl font-semibold">Get in contact</h2>
-          <button onClick={() => setOpen(false)}>✕</button>
+          <button onClick={() => setOpen(false)}>
+            <X className="cursor-pointer transition-transform duration-300 hover:rotate-90" />
+          </button>
         </div>
 
         {/* Form */}
-        <form className="px-8 space-y-5">
+        <form className="px-4 space-y-5">
           {/* First Row */}
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="First Name*"
-              className="border border-black p-3 rounded-md outline-none text-black"
+              className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+
+              // className="border border-black p-3 rounded-md outline-none text-black"
             />
 
             <input
               type="text"
               placeholder="Last Name"
-              className="border border-black p-3 rounded-md outline-none text-black"
+              className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
             />
           </div>
 
@@ -105,19 +108,19 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Company Name*"
-            className="border border-black p-3 rounded-md outline-none text-black"
+            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
           />
 
           {/* Email */}
           <input
             type="email"
             placeholder="Email*"
-            className="border border-black p-3 rounded-md outline-none text-black"
+            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
           />
 
           {/* Phone */}
           <div className="flex">
-            <select className="border  border-black  p-3 rounded-l-md outline-none">
+            <select className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition">
               <option>+91</option>
               <option>+1</option>
               <option>+44</option>
@@ -126,14 +129,22 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Phone Number"
-              className="border border-black p-3 rounded-md outline-none text-black"
+              className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
             />
           </div>
+          {/* <div className="w-full">
+            <PhoneInput
+              country={"in"}
+              enableSearch={true}
+              inputClass="!w-full !h-[48px] !text-black"
+              containerClass="w-full"
+            />
+          </div> */}
 
           {/* Message */}
           <textarea
             placeholder="Message*"
-            className="w-full border border-black  p-3 rounded-md outline-none h-40 resize-none"
+            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
           ></textarea>
         </form>
       </div>
