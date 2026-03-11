@@ -9,17 +9,17 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover animate-videoZoom"
+        className="absolute inset-0 w-full h-full object-cover "
       >
         <source src="/highest.mp4" type="video/mp4" />
       </video>
-
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="absolute bottom-38  z-10 text-center px-40 ">
-        <h1 className="text-white text-3xl md:text-6xl font-semibold drop-shadow-lg">
+      <div className="relative h-full w-full flex flex-col items-center justify-end">
+        <div className="absolute inset-0 top-1/2 z-0 bg-gradient-to-b from-transparent to-black/40 "></div>
+        <h1 className="z-1 py-28 text-[60px] text-white text-center leading-18 mx-32">
           100% Curbside Recyclable, sealable, printable ultra high barrier
           paper,
           <span className="text-gray-400">

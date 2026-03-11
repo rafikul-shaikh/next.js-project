@@ -58,7 +58,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(true)}
-            className="h-11 px-6 text-[13px] bg-[#c7e6f5] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
+            className="h-11 px-6 text-[13px] bg-[#dff2f3] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             {/* bg-[#c7e6f5] */}
             Contact us
@@ -145,8 +145,15 @@ export default function Navbar() {
           {/* Message */}
           <textarea
             placeholder="Message*"
+            rows="5"
             className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
           ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-black text-white py-3 rounded-md text-lg font-medium cursor-pointer hover:bg-[#71cbe1] transition"
+          >
+            Contact us
+          </button>
         </form>
       </div>
     </header>

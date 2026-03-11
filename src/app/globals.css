@@ -30,6 +30,14 @@
 }
 
 @font-face {
-  font-family: mainFont;
-  src: url("https://nfinitepaper.com/_next/static/media/subset_00Hypertext_Medium-s.p.4840b826.woff2");
+  font-family: "mainFont";
+  src: url("https://nfinitepaper.com/_next/static/media/subset_00Hypertext_Medium-s.p.4840b826.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply globally */
+:root {
+  font-family: "mainFont", sans-serif;
 }

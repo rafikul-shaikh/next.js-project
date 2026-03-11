@@ -4,9 +4,9 @@ export default function ProductScroll() {
   return (
     <section className="relative bg-white py-20 overflow-hidden">
       {/* Moving Cards */}
-      <div className="flex gap-4 w-max animate-marquee px-20">
+      <div className="flex gap-3 w-max animate-marquee px-20">
         {/* Card 1 */}
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
             src="/image/img-1.jpg"
             alt=""
@@ -15,7 +15,7 @@ export default function ProductScroll() {
         </div>
 
         {/* Card 2 */}
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
             src="/image/img-2.jpg"
             alt=""
@@ -24,7 +24,7 @@ export default function ProductScroll() {
         </div>
 
         {/* Card 3 */}
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
             src="/image/img-3.jpg"
             alt=""
@@ -33,7 +33,7 @@ export default function ProductScroll() {
         </div>
 
         {/* Card 4 */}
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
             src="/image/img-4.jpg"
             alt=""
@@ -42,7 +42,7 @@ export default function ProductScroll() {
         </div>
 
         {/* Card 5 */}
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
             src="/image/img-5.jpg"
             alt=""
@@ -52,7 +52,7 @@ export default function ProductScroll() {
 
         {/* Duplicate Cards for Infinite Loop */}
 
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125 rounded overflow-hidden">
           <img
             src="/image/img-1.jpg"
             alt=""
@@ -60,7 +60,7 @@ export default function ProductScroll() {
           />
         </div>
 
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125 rounded overflow-hidden">
           <img
             src="/image/img-2.jpg"
             alt=""
@@ -68,7 +68,7 @@ export default function ProductScroll() {
           />
         </div>
 
-        <div className="min-w-[400px] h-[500px] rounded overflow-hidden">
+        <div className="min-w-100 h-125 rounded overflow-hidden">
           <img
             src="/image/img-3.jpg"
             alt=""
@@ -78,9 +78,9 @@ export default function ProductScroll() {
       </div>
 
       {/* Bottom Text */}
-      <div className="w-full flex justify-center mt-20">
+      <div className="w-full flex justify-center mt-25">
         <div className="max-w-4xl text-center px-6">
-          <h1 className="text-black text-2xl md:text-3xl font-medium leading-tight">
+          <h1 className="w-2xl text-black text-2xl md:text-4xl font-medium leading-tight ">
             Introducing a fully recyclable ultra high-barrier paper structure
             for the flexible packaging industry.
           </h1>

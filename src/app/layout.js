@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="bg-white font-mainFont">
+      <body className="bg-white ">
         <Navbar />
         
         {children}

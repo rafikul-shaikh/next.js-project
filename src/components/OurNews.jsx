@@ -37,9 +37,9 @@ export default function News() {
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     },
     {
-      title: "EMF report - March 10th",
+      title: "EMF report ",
       // "The role it could play in tackling small-format flexible plastic pollution in markets with high leakage rates",
-      // date: "EMF report - March 10th",
+      date: "March 10th",
       image: "/image-2.jpg",
     },
   ];
@@ -73,9 +73,9 @@ export default function News() {
             <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
 
             {/* Text */}
-            <div className="absolute bottom-6 left-6 text-white max-w-md">
-              <h3 className="text-lg font-medium">{item.title}</h3>
-              <p className="text-sm opacity-80 mt-2">{item.date}</p>
+            <div className="absolute bottom-10 left-6 text-white max-w-md">
+              <h3 className=" text-3xl font-medium">{item.title}</h3>
+              <p className="text-sm opacity-80 mt-8">{item.date}</p>
             </div>
 
             {/* Arrow Button */}

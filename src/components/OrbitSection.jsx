@@ -80,7 +80,7 @@ export default function OrbitSection() {
         {/* ARROWS */}
         <div
           className="innerArrow absolute text-xl"
-          style={{ top: "400px", left: "500px" }}
+          style={{ top: "400px", left: "400px" }}
         >
           ▲
         </div>
