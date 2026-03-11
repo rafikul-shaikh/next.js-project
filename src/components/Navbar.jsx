@@ -60,7 +60,6 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             className="h-11 px-6 text-[13px] bg-[#dff2f3] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
-            {/* bg-[#c7e6f5] */}
             Contact us
           </button>
         </div>
@@ -74,6 +73,7 @@ export default function Navbar() {
       ></div>
 
       {/* Contact Drawer */}
+
       <div
         className={`fixed top-0 right-0 h-full w-162.5 bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
           open ? "translate-x-0" : "translate-x-full"
