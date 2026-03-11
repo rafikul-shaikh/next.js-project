@@ -28,3 +28,8 @@
 .animate-marquee {
   animation: marquee 25s linear infinite;
 }
+
+@font-face {
+  font-family: mainFont;
+  src: url("https://nfinitepaper.com/_next/static/media/subset_00Hypertext_Medium-s.p.4840b826.woff2");
+}

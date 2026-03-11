@@ -16,7 +16,7 @@ export default function Navbar() {
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 161 19"
-            className="w-30"
+            className="w-42 cursor-pointer"
           >
             <path
               fillRule="evenodd"
@@ -28,7 +28,7 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-30">
+        <div className="flex items-center gap-10">
           <div className="hidden md:flex items-center gap-11 text-[13px] font-normal tracking-wide">
             <a href="#specifications" className="relative pb-1 group">
               Specifications
@@ -60,6 +60,7 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             className="h-11 px-6 text-[13px] bg-[#c7e6f5] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
+            {/* bg-[#c7e6f5] */}
             Contact us
           </button>
         </div>

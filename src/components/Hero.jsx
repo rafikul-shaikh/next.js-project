@@ -18,8 +18,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="absolute bottom-30  z-10 text-center px-40 ">
-        <h1 className="text-white text-2xl md:text-5xl font-semibold drop-shadow-lg">
+      <div className="absolute bottom-38  z-10 text-center px-40 ">
+        <h1 className="text-white text-3xl md:text-6xl font-semibold drop-shadow-lg">
           100% Curbside Recyclable, sealable, printable ultra high barrier
           paper,
           <span className="text-gray-400">
