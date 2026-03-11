@@ -41,7 +41,10 @@ export default function Specifications() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20">
+    <section
+      id="specifications"
+      className="bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20"
+    >
       {/* Header */}
       <div className="flex justify-between  border-b border-gray-400">
         <div className="flex items-center gap-3">

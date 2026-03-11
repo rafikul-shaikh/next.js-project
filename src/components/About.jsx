@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className=" py-28">
+    <section id="about" className=" py-28">
       {/* bg-[#E9E3DD] */}
       <div className="max-w-375 mx-auto px-8 grid grid-cols-12 items-start">
         {/* LEFT BADGE */}

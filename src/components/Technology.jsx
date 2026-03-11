@@ -14,7 +14,7 @@ export default function Technology() {
   }, []);
 
   return (
-    <section className="w-full h-full py-24 bg-black">
+    <section id="technology" className="w-full h-full py-24 bg-black">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-white text-5xl font-bold mb-10 text-center">
           Our Barrier Technology

@@ -7,7 +7,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-export default function OrbitSection() {
+export default function Impact() {
   const container = useRef(null);
 
   const texts = [
@@ -48,6 +48,7 @@ export default function OrbitSection() {
 
   return (
     <section
+      id="impact"
       ref={container}
       className="h-[200vh] flex items-center justify-center bg-[#f4f1ee]"
     >
