@@ -43,7 +43,7 @@ export default function Specifications() {
   return (
     <section
       id="specifications"
-      className="light-section bg-white text-black bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20"
+      className="light-section  text-black bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20"
     >
       {/* Header */}
       <div className="flex justify-between  border-b border-gray-400">

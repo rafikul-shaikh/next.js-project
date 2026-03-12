@@ -86,7 +86,7 @@ export default function Impact() {
       className=" light-section bg-[#f4f1ee] text-black min-h-screen  flex items-center justify-center "
       // h-[200vh
     >
-      <div className="relative w-[1600px] h-[800px]">
+      <div className="relative w-400 h-200">
         {/* SVG ORBITS */}
         <svg className="absolute  w-full h-full">
           {/* OUTER ELLIPSE */}
@@ -142,7 +142,7 @@ export default function Impact() {
 
         {/* CENTER TEXT */}
 
-        <div className="absolute top-1/2 left-1/2 w-[380px] -translate-x-1/2 -translate-y-1/2 text-center">
+        <div className="absolute top-1/2 left-1/2 w-95 -translate-x-1/2 -translate-y-1/2 text-center">
           {texts.map((item, index) => (
             <div key={index} className="impactText absolute inset-0 opacity-0">
               <h2 className="text-xl font-semibold mb-3">{item.title}</h2>

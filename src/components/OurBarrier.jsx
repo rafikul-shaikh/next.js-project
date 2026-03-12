@@ -115,7 +115,7 @@ export default function OurBarrier() {
       </section>
       {/* FAQ section  */}
       <section className=" light-section bg-white text-black border-t border-b border-gray-300">
-        <div className="grid grid-cols-2 min-h-[600px]">
+        <div className="grid grid-cols-2 min-h-150">
           {/* LEFT SIDE */}
           <div className="flex items-center justify-center px-20 border-r border-gray-300">
             <div className="text-center max-w-xl">

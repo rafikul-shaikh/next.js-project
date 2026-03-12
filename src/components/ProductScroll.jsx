@@ -1,8 +1,24 @@
 "use client";
+import { useEffect } from "react";
 
 export default function ProductScroll() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.querySelector(".animate-marquee");
+      if (!element) return;
+
+      element.style.setProperty("--speed", "20s");
+      clearTimeout(window.scrollTimeout);
+      window.scrollTimeout = setTimeout(() => {
+        element.style.setProperty("--speed", "50s");
+      }, 200);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <section className=" light-section text-black serelative bg-white py-20 overflow-hidden">
+    <section className=" light-section text-black serelative bg-white py-12 overflow-hidden">
       {/* Moving Cards */}
       <div className="flex gap-3 w-max animate-marquee px-20">
         {/* Card 1 */}
