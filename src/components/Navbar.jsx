@@ -1,17 +1,42 @@
 "use client";
-import { useState } from "react";
-import { X } from "lucide-react";
-import PhoneInput from "react-phone-input-2";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import "react-phone-input-2/lib/style.css";
+import ContactDrawer from "@/components/ContactDrawer";
 
 export default function Navbar() {
+  const [darkText, setDarkText] = useState(false);
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          if (section.classList.contains("light-section")) {
+            setDarkText(true); // text become black
+          } else {
+            setDarkText(false);
+          }
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 text-white">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 transition-colors duration-300 ${
+        darkText ? "text-black" : "text-white"
+      }`}
+      //  className="fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 text-white"
+    >
       <nav className="flex items-center justify-between">
-        {/* <div>Nfinite</div> */}
-        <div>
+        <Link href="/" className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -25,7 +50,7 @@ export default function Navbar() {
             ></path>
             <path d="M148.449 3.986H161V.916h-12.551c-2.554 0-4.618 2.088-4.618 4.642v7.909c0 2.554 2.064 4.642 4.618 4.642H161v-3.07h-12.551c-.86 0-1.572-.713-1.572-1.572v-3.242h11.053v-3.07h-11.053V5.557c0-.86.712-1.572 1.572-1.572M124.157.916v3.07h7.05v14.123h3.07V3.986h7.049V.916zm-2.456 17.193V.916h-3.07v17.193zm-25.175 0V.916h-3.07v17.193zM78.267.916c-2.555 0-4.617 2.088-4.617 4.642v12.55h3.045V10.2h11.077V7.13H76.72V5.533c0-.86.713-1.572 1.573-1.572h12.55V.891zM68.1.916v12.423L57.053.953 53.976.99v17.12h3.07V5.852l11.053 12.144 3.07.113V.94zM113.051.916v12.423L102.006.953 98.928.99v17.12h3.07V5.852l11.053 12.144 3.07.113V.94z"></path>
           </svg>
-        </div>
+        </Link>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-10">
@@ -58,7 +83,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(true)}
-            className="h-11 px-6 text-[13px] bg-[#dff2f3] text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
+            className="h-11 px-6 text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             Contact us
           </button>
@@ -71,91 +96,8 @@ export default function Navbar() {
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       ></div>
-
       {/* Contact Drawer */}
-
-      <div
-        className={`fixed top-0 right-0 h-full w-162.5 bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex justify-between items-center p-6 mb-10">
-          <h2 className="text-3xl font-semibold">Get in contact</h2>
-          <button onClick={() => setOpen(false)}>
-            <X className="cursor-pointer transition-transform duration-300 hover:rotate-90" />
-          </button>
-        </div>
-
-        {/* Form */}
-        <form className="px-4 space-y-5">
-          {/* First Row */}
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="First Name*"
-              className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-
-              // className="border border-black p-3 rounded-md outline-none text-black"
-            />
-
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-            />
-          </div>
-
-          {/* Company */}
-          <input
-            type="text"
-            placeholder="Company Name*"
-            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-          />
-
-          {/* Email */}
-          <input
-            type="email"
-            placeholder="Email*"
-            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-          />
-
-          {/* Phone */}
-          <div className="flex">
-            <select className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition">
-              <option>+91</option>
-              <option>+1</option>
-              <option>+44</option>
-            </select>
-
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-            />
-          </div>
-          {/* <div className="w-full">
-            <PhoneInput
-              country={"in"}
-              enableSearch={true}
-              inputClass="!w-full !h-[48px] !text-black"
-              containerClass="w-full"
-            />
-          </div> */}
-
-          {/* Message */}
-          <textarea
-            placeholder="Message*"
-            rows="5"
-            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-3 rounded-md text-lg font-medium cursor-pointer hover:bg-[#71cbe1] transition"
-          >
-            Contact us
-          </button>
-        </form>
-      </div>
+      <ContactDrawer open={open} setOpen={setOpen} />
     </header>
   );
 }

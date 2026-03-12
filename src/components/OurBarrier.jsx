@@ -58,7 +58,7 @@ export default function OurBarrier() {
       </div>
 
       {/* Horizontal Scrolling with snap section */}
-      <section className="flex overflow-x-auto snap-x snap-mandatory w-full scroll-smooth no-scrollbar">
+      <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory w-full scroll-smooth no-scrollbar">
         <div className="min-w-full snap-center px-4 py-20">
           <p className="w-2xl text-3xl md:text-5xl font-semibold">
             "Nfinite shares our commitment to creating a circular economy, and
@@ -114,7 +114,7 @@ export default function OurBarrier() {
         </div>
       </section>
       {/* FAQ section  */}
-      <section className="border-t border-b border-gray-300">
+      <section className=" light-section bg-white text-black border-t border-b border-gray-300">
         <div className="grid grid-cols-2 min-h-[600px]">
           {/* LEFT SIDE */}
           <div className="flex items-center justify-center px-20 border-r border-gray-300">

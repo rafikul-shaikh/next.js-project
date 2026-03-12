@@ -2,7 +2,7 @@
 
 export default function ProductScroll() {
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
+    <section className=" light-section text-black serelative bg-white py-20 overflow-hidden">
       {/* Moving Cards */}
       <div className="flex gap-3 w-max animate-marquee px-20">
         {/* Card 1 */}
