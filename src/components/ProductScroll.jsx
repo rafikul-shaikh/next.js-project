@@ -1,26 +1,54 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ProductScroll() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.querySelector(".animate-marquee");
-      if (!element) return;
+  const marqueeRef = useRef(null);
 
-      element.style.setProperty("--speed", "20s");
-      clearTimeout(window.scrollTimeout);
-      window.scrollTimeout = setTimeout(() => {
-        element.style.setProperty("--speed", "50s");
-      }, 200);
+  useEffect(() => {
+    let x = 0;
+    let velocity = 0;
+
+    const marquee = marqueeRef.current;
+
+    const animate = () => {
+      velocity *= 0.9; //this line controls How quickly the speed returns to normal, (less value , less speed)
+
+      x -= 0.5 + velocity; // this Line controls the constant movement speed(less value , less speed  )
+
+      if (marquee) {
+        //   if (x < -marquee.scrollWidth / 2) {
+        //     x = 0;
+        //   }
+        if (x <= -marquee.scrollWidth / 2) {
+          x += marquee.scrollWidth / 2;
+        }
+
+        marquee.style.transform = `translateX(${x}px)`;
+      }
+
+      requestAnimationFrame(animate);
     };
+
+    animate();
+
+    const handleScroll = () => {
+      velocity += 0.7; // it increase Speed when scrolling(less value , less speed)
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <section className=" light-section text-black serelative bg-white py-12 overflow-hidden">
+    <section className=" light-section text-black relative bg-white py-12 overflow-hidden">
       {/* Moving Cards */}
-      <div className="flex gap-3 w-max animate-marquee px-20">
+      <div
+        ref={marqueeRef}
+        className="flex gap-3 w-max will-change-transform px-20"
+      >
         {/* Card 1 */}
         <div className="min-w-100 h-125  rounded overflow-hidden">
           <img
