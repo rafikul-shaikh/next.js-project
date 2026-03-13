@@ -1,6 +1,6 @@
 "use client";
 
-export default function ContactSection() {
+export default function ContactSection({ openContact }) {
   return (
     <section className="max-h-7xl px-4 mt-20">
       {/* Main Container */}
@@ -28,7 +28,10 @@ export default function ContactSection() {
         </p>
 
         {/* Button */}
-        <button className="bg-black text-white px-6 py-3 rounded-md text-sm hover:bg-gray-800 transition">
+        <button
+          onClick={openContact}
+          className="bg-black text-white px-6 py-3 rounded-md text-sm hover:bg-gray-800 transition"
+        >
           Contact us
         </button>
       </div>

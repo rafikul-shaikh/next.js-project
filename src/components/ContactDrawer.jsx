@@ -4,17 +4,17 @@ import { X } from "lucide-react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-export default function ContactDrawer({ open, setOpen }) {
+export default function ContactDrawer({ isOpen, closeContact }) {
   return (
     <div
       className={`fixed top-0 right-0 h-full w-[650px] bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
-        open ? "translate-x-0" : "translate-x-full"
+        isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <div className="flex justify-between items-center p-6 mb-10">
         <h2 className="text-3xl font-semibold">Get in contact</h2>
 
-        <button onClick={() => setOpen(false)}>
+        <button onClick={closeContact}>
           <X className="cursor-pointer transition-transform duration-300 hover:rotate-90" />
         </button>
       </div>

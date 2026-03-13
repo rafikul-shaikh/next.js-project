@@ -1,3 +1,5 @@
+
+"use client";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -10,15 +12,16 @@ import News from "@/components/News";
 import About from "@/components/About";
 import OurBarrier from "@/components/OurBarrier";
 import Impact from "@/components/Impact";
-// import { useState } from "react";
+import { useState } from "react";
+import ContactDrawer from "@/components/ContactDrawer";
 
 
 export default function Home() {
 
-  // const [contactOpen, setContactOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
    return (
     <>
-      <Navbar />
+      <Navbar openContact={() => setIsContactOpen(true)} />
       <Hero />
       <ProductScroll />
       <Specifications/>
@@ -27,7 +30,12 @@ export default function Home() {
       <OurBarrier/>
       <News/>
       <About/>
-      <ContactSection />
+      <ContactSection openContact={() => setIsContactOpen(true)} />
+     
+      <ContactDrawer
+        isOpen={isContactOpen}
+        closeContact={() => setIsContactOpen(false)}
+      />
       <Footer/>
     </>
   );

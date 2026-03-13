@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "react-phone-input-2/lib/style.css";
 import ContactDrawer from "@/components/ContactDrawer";
 
-export default function Navbar() {
+export default function Navbar({ openContact }) {
   const [darkText, setDarkText] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -91,13 +91,13 @@ export default function Navbar() {
       </nav>
       {/* Overlay */}
       <div
-        onClick={() => setOpen(false)}
+        onClick={() => setOpen(true)}
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       ></div>
       {/* Contact Drawer */}
-      <ContactDrawer open={open} setOpen={setOpen} />
+      <ContactDrawer isOpen={open} closeContact={() => setOpen(false)} />
     </header>
   );
 }
