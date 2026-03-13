@@ -45,7 +45,7 @@ export default function News() {
   ];
 
   return (
-    <section id="news" className="px-10 py-20">
+    <section id="news" className="px-4 py-20">
       {/* Heading */}
       <div className="flex justify-between mb-14">
         <h2 className="text-[120px] font-bold leading-none">Our</h2>

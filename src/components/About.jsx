@@ -2,9 +2,15 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className=" light-section bg-white text-black py-28">
+    <section
+      id="about"
+      className=" light-section bg-white text-black py-10 px-4"
+    >
       {/* bg-[#E9E3DD] */}
-      <div className="max-w-375 mx-auto px-8 grid grid-cols-12 items-start">
+
+      <div className=" max-w-full mx-auto grid grid-cols-12 items-start">
+        {/* [max-w-375] */}
+
         {/* LEFT BADGE */}
         <div className="col-span-2">
           <span className="text-[12px] border border-gray-400 px-3 py-1 rounded-md text-gray-700">
@@ -13,7 +19,7 @@ export default function About() {
         </div>
 
         {/* TEXT CONTENT */}
-        <div className="col-span-4 space-y-6 text-[14px] leading-relaxed text-black">
+        <div className="col-span-4 px-10 space-y-8 text-[18px] leading-6 text-black">
           <p>
             Nfinite is a spin-out from the Functional Nanomaterials Lab at the
             University of Waterloo (Canada), led by Dr. Kevin Musselman, a
@@ -30,7 +36,7 @@ export default function About() {
         </div>
 
         {/* IMAGE */}
-        <div className="col-span-6 flex justify-end">
+        <div className="col-span-6 flex justify-end ml-10">
           <div className="relative w-125 h-150 rounded-lg overflow-hidden">
             <img src="/Lab.avif" alt="Lab" className="object-cover" />
           </div>
