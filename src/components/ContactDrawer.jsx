@@ -26,13 +26,15 @@ export default function ContactDrawer({ isOpen, closeContact }) {
           <input
             type="text"
             placeholder="First Name*"
-            className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+            required
+            className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition invalid:border-red-500 focus:invalid:border-red-500"
           />
 
           <input
             type="text"
             placeholder="Last Name"
-            className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+            required
+            className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition "
           />
         </div>
 
@@ -40,19 +42,21 @@ export default function ContactDrawer({ isOpen, closeContact }) {
         <input
           type="text"
           placeholder="Company Name*"
-          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+          required
+          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition  invalid:border-red-500 focus:invalid:border-red-500"
         />
 
         {/* Email */}
         <input
           type="email"
           placeholder="Email*"
-          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+          required
+          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition  invalid:border-red-500 focus:invalid:border-red-500"
         />
 
         {/* Phone */}
         <div className="flex">
-          <select className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition">
+          <select className="border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition ">
             <option>+91</option>
             <option>+1</option>
             <option>+44</option>
@@ -61,7 +65,8 @@ export default function ContactDrawer({ isOpen, closeContact }) {
           <input
             type="text"
             placeholder="Phone Number"
-            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+            required
+            className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition  invalid:border-red-500 focus:invalid:border-red-500"
           />
         </div>
 
@@ -69,7 +74,8 @@ export default function ContactDrawer({ isOpen, closeContact }) {
         <textarea
           placeholder="Message*"
           rows="5"
-          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition"
+          required
+          className="w-full border border-gray-400 p-3 rounded-md outline-none text-black hover:border-black focus:border-black transition  invalid:border-red-500 focus:invalid:border-red-500"
         ></textarea>
 
         <button

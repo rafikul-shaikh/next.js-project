@@ -51,16 +51,16 @@ export default function OurBarrier() {
           <source src="/high.mp4" type="video/mp4" />
         </video>
 
-        <p className="w-4xl text-white text-5xl md:text-6xl font-semibold drop-shadow-lg">
+        <p className="w-4xl text-white text-5xl md:text-6xl font-normal leading-19 drop-shadow-lg">
           Our High Barrier Paper Manufacturing Plant, scaling sustainable
           packaging in North America
         </p>
       </div>
 
       {/* Horizontal Scrolling with snap section */}
-      <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory w-full scroll-smooth no-scrollbar">
+      <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar">
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+          <p className="w-3xl text-3xl md:text-5xl font-normal leading-14">
             "Nfinite shares our commitment to creating a circular economy, and
             we look forward to continuing to work with them to develop
             innovative ways to deliver more sustainable packaging solutions."
@@ -73,7 +73,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
             "PepsiCo R&D started working with the Nfinite team while they were
             at the University of Waterloo, and in the short span of two years,
             they have made rapid progress from lab-scale technology to actual
@@ -87,7 +87,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
             "Amcor is excited to be both an early-stage investor and a strategic
             collaboration partner to Nfinite on this ground breaking project."
           </p>
@@ -99,7 +99,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-2xl text-3xl md:text-5xl font-semibold">
+          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
             "We are collaborating with partners like Nfinite to develop the next
             generation of recyclable and compostable flexible packaging with
             ultra-thin barrier coatings that meet the performance needs of our

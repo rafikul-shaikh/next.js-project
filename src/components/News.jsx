@@ -60,13 +60,13 @@ export default function News() {
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-137.5 h-162.5 rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105"
+            className="group min-w-137.5 h-162.5 rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer"
           >
             {/* Image */}
             <img
               src={item.image}
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover  transition-transform duration-1000 ease-out group-hover:scale-110"
             />
 
             {/* Gradient Overlay */}
@@ -79,9 +79,7 @@ export default function News() {
             </div>
 
             {/* Arrow Button */}
-            {/* <div className="absolute bottom-6 right-6 bg-white text-black w-8 h-8 flex items-center justify-center rounded-sm opacity-0 group-hover:opacity-100 transition">
-              <ChevronRight />
-            </div> */}
+
             <div className="absolute bottom-6 right-6 bg-white text-black w-10 h-10 flex items-center justify-center rounded-sm transition group-hover:bg-cyan-500 group-hover:text-white">
               <ChevronRight />
             </div>
