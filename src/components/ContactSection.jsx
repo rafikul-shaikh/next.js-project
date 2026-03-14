@@ -5,13 +5,15 @@ export default function ContactSection({ openContact }) {
     <section className="max-h-7xl px-4 mt-20">
       {/* Main Container */}
 
-      <div className="min-h-130 bg-[#c6dde1] rounded-lg py-20 flex flex-col items-center justify-center text-center">
-        <div className="mb-20">
+      <div className="min-h-130 bg-[#dff2f3] rounded-lg py-20 flex flex-col items-center justify-center text-center">
+        {/* #c6dde1 */}
+        {/* 8ab4fc */}
+        <div className="mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 161 19"
-            className="w-50"
+            className="w-60"
           >
             <path
               fillRule="evenodd"
@@ -22,7 +24,7 @@ export default function ContactSection({ openContact }) {
           </svg>
         </div>
 
-        <p className="font-semibold text-3xl max-w-xl text-gray-800 leading-relaxed mb-8">
+        <p className="font-normal fon-weight text-3xl max-w-xl text-gray-800 leading-normal mb-12">
           Subscribe to learn more about how our paper can eliminate plastic
           packaging from daily life
         </p>

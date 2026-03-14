@@ -80,79 +80,104 @@ export default function Impact() {
   }, []);
 
   return (
-    <section
-      id="impact"
-      ref={container}
-      className=" light-section bg-[#f4f1ee] text-black min-h-screen  flex items-center justify-center "
-      // h-[200vh
-    >
-      <div className="relative w-400 h-200">
-        {/* SVG ORBITS */}
-        <svg className="absolute  w-full h-full">
-          {/* OUTER ELLIPSE */}
-          <ellipse
-            cx="750"
-            cy="400"
-            rx="720"
-            ry="260"
-            stroke="#999"
-            strokeDasharray="3 6"
-            fill="none"
-          />
+    <>
+      <section
+        id="impact"
+        ref={container}
+        className=" light-section bg-white text-black min-h-screen  flex items-center justify-center "
+        // h-[200vh
+      >
+        <div className="relative w-400 h-200">
+          {/* SVG ORBITS */}
+          <svg className="absolute  w-full h-full">
+            {/* OUTER ELLIPSE */}
+            <ellipse
+              cx="750"
+              cy="400"
+              rx="720"
+              ry="260"
+              stroke="#999"
+              strokeDasharray="3 6"
+              fill="none"
+            />
 
-          {/* INNER CIRCLE PATH */}
-          <path
-            id="innerPath"
-            d="M750,400 m-260,0
+            {/* INNER CIRCLE PATH */}
+            {/* <path
+              id="innerPath"
+              d="M750,400 m-260,0
                a260,260 0 1,1 520,0
                a260,260 0 1,1 -520,0"
-            stroke="#999"
-            strokeDasharray="3 6"
-            fill="none"
-          />
-        </svg>
+              stroke="#999"
+              strokeDasharray="3 6"
+              fill="none"
+            /> */}
+            <path
+              id="innerPath"
+              d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
+              stroke="#999"
+              strokeDasharray="3 6"
+              fill="none"
+            />
+          </svg>
 
-        {/* ARROWS */}
-        <div className="bg-red-400 ">
-          <div
-            className="innerArrow absolute text-xl"
-            style={{ top: "400px", left: "-55px" }}
-          >
-            ▲
-          </div>
-          <div
-            className="innerArrow absolute text-xl"
-            style={{ top: "400px", left: "-55px" }}
-          >
-            ▲
-          </div>
-          <div
-            className="innerArrow absolute text-xl"
-            style={{ top: "400px", left: "-15px" }}
-          >
-            ▲
-          </div>
-          <div
-            className="innerArrow absolute text-xl"
-            style={{ top: "400px", left: "-55px" }}
-          >
-            ▲
-          </div>
-        </div>
-
-        {/* CENTER TEXT */}
-
-        <div className="absolute top-1/2 left-1/2 w-95 -translate-x-1/2 -translate-y-1/2 text-center">
-          {texts.map((item, index) => (
-            <div key={index} className="impactText absolute inset-0 opacity-0">
-              <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.desc}
-              </p>
+          {/* ARROWS */}
+          <div className="bg-red-400 ">
+            <div
+              className="innerArrow absolute text-xl"
+              style={{ top: "400px", left: "-55px" }}
+            >
+              ▲
             </div>
-          ))}
+            <div
+              className="innerArrow absolute text-xl"
+              style={{ top: "400px", left: "-55px" }}
+            >
+              ▲
+            </div>
+            <div
+              className="innerArrow absolute text-xl"
+              style={{ top: "400px", left: "-15px" }}
+            >
+              ▲
+            </div>
+            <div
+              className="innerArrow absolute text-xl"
+              style={{ top: "400px", left: "-55px" }}
+            >
+              ▲
+            </div>
+          </div>
+
+          {/* CENTER TEXT */}
+
+          <div className="absolute top-1/2 left-1/2 w-95 -translate-x-1/2 -translate-y-1/2 text-center">
+            {texts.map((item, index) => (
+              <div
+                key={index}
+                className="impactText absolute inset-0 opacity-0"
+              >
+                <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="min-h-50  flex flex-col items-center justify-end">
+        <div>
+          <div>
+            <div className="text-center">
+              <h2 className="text-xl font-bold mb-18">Our Impact</h2>
+              <h3 className=" w-5xl mb-22 text-black text-xl md:text-8xl font-normal leading-22">
+                A 40% lower carbon footprint 2 trillion fewer plastic packages
+                polluting the environment
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="px-6 lg:px-10 py-6 text-sm text-gray-600">
+    <footer className="lg:px-10 py-4 text-[1px] md:text-xs lg:text-sm text-gray-600">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <p>265 Frobisher Drive, Unit 1, Waterloo, ON N2V 2G4 - Canada</p>
