@@ -30,7 +30,7 @@ export default function Navbar({ openContact }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 px-6 md:px-12 lg:px-20 py-8 md:py-5 transition-colors duration-300 ${
         darkText ? "text-black" : "text-white"
       }`}
       //  className="fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 text-white"
@@ -41,7 +41,7 @@ export default function Navbar({ openContact }) {
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 161 19"
-            className="w-42 cursor-pointer"
+            className="w-32 md:w-40 cursor-pointer"
           >
             <path
               fillRule="evenodd"
@@ -53,7 +53,7 @@ export default function Navbar({ openContact }) {
         </Link>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-4 md:gap-10">
           <div className="hidden md:flex items-center gap-11 text-[13px] font-normal tracking-wide">
             <a href="#specifications" className="relative pb-1 group">
               Specifications
@@ -83,7 +83,7 @@ export default function Navbar({ openContact }) {
 
           <button
             onClick={() => setOpen(true)}
-            className="h-11 px-6 text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
+            className="h-9 md:h-11 px-4 md:px-6 text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             Contact us
           </button>
