@@ -87,9 +87,9 @@ export default function Impact() {
         className=" light-section bg-white text-black min-h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className="relative w-400 h-200">
+        <div className="relative w-[320px] sm:w-[500px] md:w-[700px] lg:w-[1000px] h-[320px] sm:h-[450px] md:h-[600px] lg:h-[700px]">
           {/* SVG ORBITS */}
-          <svg className="absolute  w-full h-full">
+          <svg className="absolute w-full h-full" viewBox="0 0 1500 800">
             {/* OUTER ELLIPSE */}
             <ellipse
               cx="750"
@@ -102,15 +102,7 @@ export default function Impact() {
             />
 
             {/* INNER CIRCLE PATH */}
-            {/* <path
-              id="innerPath"
-              d="M750,400 m-260,0
-               a260,260 0 1,1 520,0
-               a260,260 0 1,1 -520,0"
-              stroke="#999"
-              strokeDasharray="3 6"
-              fill="none"
-            /> */}
+
             <path
               id="innerPath"
               d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
@@ -150,7 +142,7 @@ export default function Impact() {
 
           {/* CENTER TEXT */}
 
-          <div className="absolute top-1/2 left-1/2 w-95 -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="absolute top-1/2 left-1/2 max-w-xs sm:max-w-md md:max-w-lg -translate-x-1/2 -translate-y-1/2 text-center">
             {texts.map((item, index) => (
               <div
                 key={index}
@@ -170,7 +162,7 @@ export default function Impact() {
           <div>
             <div className="text-center">
               <h2 className="text-xl font-bold mb-18">Our Impact</h2>
-              <h3 className=" w-5xl mb-22 text-black text-xl md:text-8xl font-normal leading-22">
+              <h3 className=" max-w-5xl mx-auto mb-22 text-black text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-normal leading-22">
                 A 40% lower carbon footprint 2 trillion fewer plastic packages
                 polluting the environment
               </h3>

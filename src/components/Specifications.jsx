@@ -43,10 +43,10 @@ export default function Specifications() {
   return (
     <section
       id="specifications"
-      className="light-section  text-black bg-[#d7e5e8] px-16 py-10 rounded-lg max-w-full h-full mt-20"
+      className="light-section  text-black bg-[#d7e5e8] px-4 sm:px-6 md:px-10 lg:px-16 py-10 rounded-lg max-w-full h-full mt-20"
     >
       {/* Header */}
-      <div className="flex justify-between  border-b border-gray-400">
+      <div className="flex flex-col md:flex-row md:justify-between  border-b border-gray-400">
         <div className="flex items-center gap-3">
           <img
             src="https://nfinitepaper.com/cdn/e3d8c4e92a1bd81ff46619d8647885be3f59e496-24x24.svg?auto=format"
@@ -56,7 +56,7 @@ export default function Specifications() {
           <h2 className="text-lg font-semibold">Barrier Performance</h2>
         </div>
 
-        <div className=" p-6 rounded-lg  w-137.5 space-y-6">
+        <div className=" p-6 rounded-lg  w-full md:max-w-xl space-y-6">
           <div className="flex items-center gap-6">
             <div className="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Moisture
@@ -65,7 +65,7 @@ export default function Specifications() {
               &lt;0.3 g/m2/day WVTR (38°C, 90% RH)
             </p>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
             <div className="bg-cyan-400 text-white px-4 py-1 rounded-md font-medium">
               Oxygen
             </div>
