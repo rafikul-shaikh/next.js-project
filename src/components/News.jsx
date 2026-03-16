@@ -45,11 +45,18 @@ export default function News() {
   ];
 
   return (
-    <section id="news" className="px-4 py-20">
+    <section
+      id="news"
+      className="px-4 sm:px-6 md:px-10 lg:px-16 py-12 md:py-20"
+    >
       {/* Heading */}
       <div className="flex justify-between mb-14">
-        <h2 className="text-[120px] font-bold leading-none">Our</h2>
-        <h2 className="text-[120px] font-bold leading-none">News</h2>
+        <h2 className="text-4xl sm:text-8xl md:text-8xl lg:text-[120px] font-bold leading-none">
+          Our
+        </h2>
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-[120px] font-bold leading-none">
+          News
+        </h2>
       </div>
 
       {/* Slider */}
@@ -60,7 +67,9 @@ export default function News() {
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-137.5 h-162.5 rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer"
+            className="group min-w-[280px] sm:min-w-[350px] md:min-w-[450px] lg:min-w-[550px] 
+               h-[360px] sm:h-[420px] md:h-[520px] lg:h-[650px]
+             rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer"
           >
             {/* Image */}
             <img
@@ -74,7 +83,9 @@ export default function News() {
 
             {/* Text */}
             <div className="absolute bottom-10 left-6 text-white max-w-md">
-              <h3 className=" text-3xl font-medium">{item.title}</h3>
+              <h3 className=" text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
+                {item.title}
+              </h3>
               <p className="text-sm opacity-80 mt-8">{item.date}</p>
             </div>
 

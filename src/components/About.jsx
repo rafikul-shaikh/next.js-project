@@ -8,18 +8,16 @@ export default function About() {
     >
       {/* bg-[#E9E3DD] */}
 
-      <div className=" max-w-full mx-auto grid grid-cols-12 items-start">
-        {/* [max-w-375] */}
-
+      <div className=" max-w-full mx-auto grid grid-cols-1 md:grid-cols-12 items-start">
         {/* LEFT BADGE */}
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <span className="text-[12px] border border-gray-400 px-3 py-1 rounded-md text-gray-700">
             Proven Leaders in ALD
           </span>
         </div>
 
         {/* TEXT CONTENT */}
-        <div className="col-span-4 px-10 space-y-8 text-[18px] leading-6 text-black">
+        <div className="md:col-span-4 px-4 md:px-10 space-y-8 text-base md:text-lg leading-6 text-black">
           <p>
             Nfinite is a spin-out from the Functional Nanomaterials Lab at the
             University of Waterloo (Canada), led by Dr. Kevin Musselman, a
@@ -36,8 +34,8 @@ export default function About() {
         </div>
 
         {/* IMAGE */}
-        <div className="col-span-6 flex justify-end ml-10">
-          <div className="relative w-125 h-150 rounded-lg overflow-hidden">
+        <div className="Md:col-span-6 flex justify-end ml-0 md:ml-10">
+          <div className="relative w-full max-w-[500px] h-[350px] md:h-[600px] rounded-lg overflow-hidden">
             <img src="/Lab.avif" alt="Lab" className="object-cover" />
           </div>
         </div>

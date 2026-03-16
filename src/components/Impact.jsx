@@ -162,7 +162,7 @@ export default function Impact() {
           <div>
             <div className="text-center">
               <h2 className="text-xl font-bold mb-18">Our Impact</h2>
-              <h3 className=" max-w-5xl mx-auto mb-22 text-black text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-normal leading-22">
+              <h3 className=" max-w-5xl mx-auto mb-22 text-black text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-normal leading-none">
                 A 40% lower carbon footprint 2 trillion fewer plastic packages
                 polluting the environment
               </h3>

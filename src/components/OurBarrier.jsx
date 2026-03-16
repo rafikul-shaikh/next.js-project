@@ -40,7 +40,7 @@ export default function OurBarrier() {
 
   return (
     <section>
-      <div className="relative h-screen rounded-lg py-20 flex flex-col items-center justify-center text-center">
+      <div className="relative min-h-screen rounded-lg py-20 flex flex-col items-center justify-center text-center">
         <video
           autoPlay
           muted
@@ -51,7 +51,7 @@ export default function OurBarrier() {
           <source src="/high.mp4" type="video/mp4" />
         </video>
 
-        <p className="w-4xl text-white text-5xl md:text-6xl font-normal leading-19 drop-shadow-lg">
+        <p className="max-w-4xl px-4 text-white text-2xl md:text-6xl font-normal leading-none drop-shadow-lg">
           Our High Barrier Paper Manufacturing Plant, scaling sustainable
           packaging in North America
         </p>
@@ -60,7 +60,7 @@ export default function OurBarrier() {
       {/* Horizontal Scrolling with snap section */}
       <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar">
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-3xl text-3xl md:text-5xl font-normal leading-14">
+          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
             "Nfinite shares our commitment to creating a circular economy, and
             we look forward to continuing to work with them to develop
             innovative ways to deliver more sustainable packaging solutions."
@@ -73,13 +73,13 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
+          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
             "PepsiCo R&D started working with the Nfinite team while they were
             at the University of Waterloo, and in the short span of two years,
             they have made rapid progress from lab-scale technology to actual
             roll-to-roll coating implementation at different scales."
           </p>
-          <div className="py-15">
+          <div className="py-10 md:py-16">
             <h1>Sridevi Narayan-Sarathy</h1>
             <p className="text-gray-500">
               Technical Director / R&D Senior Fellow at PepsiCo
@@ -87,11 +87,11 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
+          <p className="max-w-3xl mx-auto  text-3xl md:text-5xl font-normal leading-none">
             "Amcor is excited to be both an early-stage investor and a strategic
             collaboration partner to Nfinite on this ground breaking project."
           </p>
-          <div className="py-15">
+          <div className="py-10 md:py-15">
             <h1>Michael Hartman</h1>
             <p className="text-gray-500">
               Senior Fellow, Emerging Material/Process Development at Amcor
@@ -99,13 +99,13 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="w-4xl text-3xl md:text-5xl font-normal leading-14">
+          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
             "We are collaborating with partners like Nfinite to develop the next
             generation of recyclable and compostable flexible packaging with
             ultra-thin barrier coatings that meet the performance needs of our
             broad portfolio."
           </p>
-          <div className="py-15">
+          <div className="py-10 md:py-15">
             <h1>Mark Newman</h1>
             <p className="text-gray-500">
               Head of Packaging, Advanced Materials at Unilever
@@ -115,9 +115,9 @@ export default function OurBarrier() {
       </section>
       {/* FAQ section  */}
       <section className=" light-section bg-white text-black border-t border-b border-gray-300">
-        <div className="grid grid-cols-2 min-h-150">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:min-h-[700px] lg:min-h-[800px]">
           {/* LEFT SIDE */}
-          <div className="flex items-center justify-center px-20 border-r border-gray-300">
+          <div className="flex items-center justify-center px-6 md:px-20 border-r border-gray-300">
             <div className="text-center max-w-xl">
               <span className="font-semibold border px-3 py-1 text-xs rounded">
                 FAQ
