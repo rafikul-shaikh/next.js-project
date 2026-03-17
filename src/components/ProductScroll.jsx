@@ -195,21 +195,9 @@ export default function ProductScroll() {
         ].map((img, index) => (
           <div
             key={index}
-            className="
-              min-w-[220px]
-              sm:min-w-[260px]
-              md:min-w-[320px]
-              lg:min-w-[380px]
-              xl:min-w-[420px]
-
-              h-[260px]
-              sm:h-[300px]
-              md:h-[380px]
-              lg:h-[450px]
-              xl:h-[500px]
-
-              rounded overflow-hidden
-            "
+            className="min-w-[220px] sm:min-w-[260px] md:min-w-[320px] lg:min-w-[380px] xl:min-w-[420px]
+             h-[260px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[500px]
+             rounded overflow-hidden "
           >
             <img
               src={`/image/${img}`}
@@ -223,7 +211,7 @@ export default function ProductScroll() {
       {/* Bottom Text */}
       <div className="w-full flex justify-center mt-10 md:mt-24 lg:mt-32">
         <div className="max-w-3xl text-center px-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium leading-tight">
             Introducing a fully recyclable ultra high-barrier paper structure
             for the flexible packaging industry.
           </h1>
