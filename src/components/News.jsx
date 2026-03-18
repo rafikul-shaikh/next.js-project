@@ -8,7 +8,8 @@ export default function News() {
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 624; // Card width (600) + gap (24)
+      const scrollAmount = current.clientWidth * 0.8;
+      // const scrollAmount = 624; // Card width (600) + gap (24)
 
       if (direction === "left") {
         current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -45,16 +46,13 @@ export default function News() {
   ];
 
   return (
-    <section
-      id="news"
-      className="px-4 sm:px-6 md:px-10 lg:px-16 py-12 md:py-20"
-    >
+    <section id="news" className="ml-3 py-12 md:py-20">
       {/* Heading */}
-      <div className="flex justify-between mb-14">
-        <h2 className="text-4xl sm:text-8xl md:text-8xl lg:text-[120px] font-bold leading-none">
+      <div className="flex justify-between items-end mb-14  px-2 sm:px-4 md:px-10 lg:px-4 ">
+        <h2 className="text-4xl sm:text-6xl md:text-9xl lg:text-[250px] font-normal leading-none">
           Our
         </h2>
-        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-[120px] font-bold leading-none">
+        <h2 className="text-3xl sm:text-6xl md:text-9xl lg:text-[250px] font-normal leading-none">
           News
         </h2>
       </div>
@@ -62,13 +60,13 @@ export default function News() {
       {/* Slider */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+        className="flex gap-3 overflow-x-auto scroll-smooth no-scrollbar"
       >
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-[280px] sm:min-w-[350px] md:min-w-[450px] lg:min-w-[550px] 
-               h-[360px] sm:h-[420px] md:h-[520px] lg:h-[650px]
+            className="group min-w-[280px] sm:min-w-[350px] md:min-w-[450px] lg:min-w-[600px] 
+               h-[360px] sm:h-[420px] md:h-[520px] lg:h-[700px]
              rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer"
           >
             {/* Image */}

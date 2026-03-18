@@ -2,7 +2,7 @@
 
 export default function ContactSection({ openContact }) {
   return (
-    <section className="max-h-7xl px-4 mt-20">
+    <section className="max-h-7xl px-4 mt-12">
       {/* Main Container */}
 
       <div className="min-h-130 bg-[#dff2f3] rounded-lg py-20 flex flex-col items-center justify-center text-center">

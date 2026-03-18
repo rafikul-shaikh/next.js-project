@@ -2,10 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className=" light-section bg-white text-black py-10 px-4"
-    >
+    <section id="about" className=" light-section bg-white text-black px-4">
       {/* bg-[#E9E3DD] */}
 
       <div className=" max-w-full mx-auto grid grid-cols-1 md:grid-cols-12 items-start">
@@ -34,7 +31,7 @@ export default function About() {
         </div>
 
         {/* IMAGE */}
-        <div className="Md:col-span-6 flex justify-end ml-0 mt-6 md:ml-10">
+        <div className="md:col-span-6 flex justify-end mt-6 md:ml-10">
           <div className="relative w-full max-w-[500px] h-[350px] md:h-[600px] rounded-lg overflow-hidden">
             <img src="/Lab.avif" alt="Lab" className="object-cover" />
           </div>
