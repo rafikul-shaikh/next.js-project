@@ -87,9 +87,13 @@ export default function Impact() {
         className=" light-section bg-white text-black min-h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className="relative w-[320px] sm:w-[500px] md:w-[700px] lg:w-[1000px] h-[320px] sm:h-[450px] md:h-[600px] lg:h-[700px]">
+        <div className="relative w-[320px] sm:w-[500px] md:w-[700px] lg:w-400 lg:h-200 mx-auto">
           {/* SVG ORBITS */}
-          <svg className="absolute w-full h-full" viewBox="0 0 1500 800">
+          <svg
+            className="absolute  w-full h-full"
+            viewBox="0 0 1500 800"
+            preserveAspectRatio="xMidYMid meet"
+          >
             {/* OUTER ELLIPSE */}
             <ellipse
               cx="750"
@@ -102,7 +106,15 @@ export default function Impact() {
             />
 
             {/* INNER CIRCLE PATH */}
-
+            {/* <path
+              id="innerPath"
+              d="M750,400 m-260,0
+               a260,260 0 1,1 520,0
+               a260,260 0 1,1 -520,0"
+              stroke="#999"
+              strokeDasharray="3 6"
+              fill="none"
+            /> */}
             <path
               id="innerPath"
               d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
@@ -142,7 +154,7 @@ export default function Impact() {
 
           {/* CENTER TEXT */}
 
-          <div className="absolute top-1/2 left-1/2 max-w-xs sm:max-w-md md:max-w-lg -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[50%] lg:w-95 -translate-x-1/2 -translate-y-1/2 text-center">
             {texts.map((item, index) => (
               <div
                 key={index}

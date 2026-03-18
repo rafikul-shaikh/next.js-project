@@ -60,7 +60,8 @@ export default function OurBarrier() {
       {/* Horizontal Scrolling with snap section */}
       <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar">
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-none">
+            {/* mx-auto  */}
             "Nfinite shares our commitment to creating a circular economy, and
             we look forward to continuing to work with them to develop
             innovative ways to deliver more sustainable packaging solutions."
@@ -73,7 +74,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-none">
             "PepsiCo R&D started working with the Nfinite team while they were
             at the University of Waterloo, and in the short span of two years,
             they have made rapid progress from lab-scale technology to actual
@@ -87,7 +88,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl mx-auto  text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-none">
             "Amcor is excited to be both an early-stage investor and a strategic
             collaboration partner to Nfinite on this ground breaking project."
           </p>
@@ -99,7 +100,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl mx-auto text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-none">
             "We are collaborating with partners like Nfinite to develop the next
             generation of recyclable and compostable flexible packaging with
             ultra-thin barrier coatings that meet the performance needs of our
@@ -113,11 +114,12 @@ export default function OurBarrier() {
           </div>
         </div>
       </section>
+
       {/* FAQ section  */}
       <section className=" light-section bg-white text-black border-t border-b border-gray-300">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:min-h-[700px] lg:min-h-[800px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0 py-10 md:py-0 min-h-[400px]">
           {/* LEFT SIDE */}
-          <div className="flex items-center justify-center px-6 md:px-20 border-r border-gray-300">
+          <div className="flex items-center justify-center px-6 md:px-10 md:border-r border-gray-300">
             <div className="text-center max-w-xl">
               <span className="font-semibold border px-3 py-1 text-xs rounded">
                 FAQ
@@ -136,7 +138,7 @@ export default function OurBarrier() {
               <div key={index} className="border-b border-gray-300">
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-10 py-8 text-left"
+                  className="w-full flex justify-between items-center px-10 py-6 md:py-10 text-left"
                 >
                   <span className="text-lg">{item.question}</span>
 
@@ -148,7 +150,7 @@ export default function OurBarrier() {
                 </button>
 
                 {open === index && (
-                  <div className="px-10 pb-22 text-gray-600 max-w-xl">
+                  <div className="px-10 pb-6 text-gray-600 max-w-xl">
                     {item.answer}
                   </div>
                 )}
