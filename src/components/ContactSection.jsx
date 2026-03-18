@@ -2,10 +2,10 @@
 
 export default function ContactSection({ openContact }) {
   return (
-    <section className="max-h-7xl px-4 mt-12">
+    <section className="max-w-9xl mx-auto px-4 mt-12">
       {/* Main Container */}
 
-      <div className="min-h-130 bg-[#dff2f3] rounded-lg py-20 flex flex-col items-center justify-center text-center">
+      <div className="min-h-[400px] md:min-h-[500px] lg:min-h-[600px bg-[#dff2f3] rounded-lg py-20 flex flex-col items-center justify-center text-center">
         {/* #c6dde1 */}
         {/* 8ab4fc */}
         <div className="mb-10">
@@ -13,7 +13,7 @@ export default function ContactSection({ openContact }) {
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 161 19"
-            className="w-60"
+            className="w-40 sm:w-52 md:w-60"
           >
             <path
               fillRule="evenodd"
@@ -24,7 +24,7 @@ export default function ContactSection({ openContact }) {
           </svg>
         </div>
 
-        <p className="font-normal fon-weight text-3xl max-w-xl text-gray-800 leading-normal mb-12">
+        <p className="font-normal fon-weight text-xl sm:text-2xl md:text-3xl max-w-xl text-gray-800 leading-normal mb-12">
           Subscribe to learn more about how our paper can eliminate plastic
           packaging from daily life
         </p>
@@ -32,7 +32,7 @@ export default function ContactSection({ openContact }) {
         {/* Button */}
         <button
           onClick={openContact}
-          className="bg-black text-white px-6 py-3 rounded-md text-sm hover:bg-gray-800 transition"
+          className="bg-black text-white px-5 py-3.5 rounded-md text-sm hover:bg-gray-800 transition"
         >
           Contact us
         </button>

@@ -30,10 +30,9 @@ export default function Navbar({ openContact }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 px-2 md:px-3 lg:px-4 xl:px-6 py-8 md:py-6 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full px-2 md:px-3 lg:px-4 xl:px-6 py-8 md:py-6 transition-colors duration-300 ${
         darkText ? "text-black" : "text-white"
       }`}
-      //  className="fixed top-0 left-0 w-full z-50 px-12 md:px-7 py-8 md:py-5 text-white"
     >
       <nav className="flex items-center justify-between">
         <Link href="/" className="">
