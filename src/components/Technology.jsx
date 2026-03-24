@@ -53,7 +53,7 @@ export default function Technology() {
             </p>
           </div>
 
-          <ul className="flex flex-col gap-4">
+          {/* <ul className="flex flex-col gap-4">
             <li className="flex items-center gap-4">
               <span className="w-6 border-t border-blue-400"></span>
               <span className="text-xs text-blue-400">
@@ -74,21 +74,21 @@ export default function Technology() {
                 Nfinite SALD barrier coating
               </span>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
 
       {/* PART 2 */}
       <div className="relative flex w-full flex-col">
-        <h3 className="flex h-screen w-full flex-col items-center justify-center gap-6 text-center text-3xl md:text-6xl py-20">
-          <span className="self-start">Hundreds of layers</span>
-          <span className="self-end text-white/80">
+        <h3 className="flex h-screen w-full flex-col justify-center gap-6 text-center text-3xl md:text-8xl py-20">
+          <span className="self-start text-left">Hundreds of layers</span>
+          <span className="self-start text-left text-white/80">
             by Spatial Atomic Layer Deposition
           </span>
         </h3>
 
         <div className="pt-[50vh]">
-          <div className="flex flex-col gap-10 px-6 py-20 md:gap-12 md:max-w-4xl md:mx-auto">
+          <div className="flex flex-col gap-10 px-6 py-20 md:gap-12 md:max-w-sm md:ml-30">
             {/* TEXT BLOCK */}
             <div className="flex flex-col gap-8">
               <h4 className="text-xl md:text-3xl">
