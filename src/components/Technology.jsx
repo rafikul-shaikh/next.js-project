@@ -33,9 +33,9 @@ export default function Technology() {
       <div className="h-[50vh] w-full"></div>
 
       {/* PART 1 */}
-      <div className="relative flex h-screen max-w-xl items-end md:items-start">
-        <div className="flex flex-col gap-10 px-35 py-10 md:mt-40 md:gap-12 md:pb-12">
-          <h3 className="  text-xl md:text-3xl">
+      <div className="relative flex min-h-screen items-end md:items-start">
+        <div className="flex flex-col gap-10 px-6 sm:px-10 md:px-35 py-10 md:mt-40 md:gap-12 md:pb-12 max-w-xl">
+          <h3 className="  text-lg sm:text-xl md:text-3xl leading-snug">
             <span className="text-blue-400">water-based</span> dispersion
             coatings on high performance paper
           </h3>

@@ -87,10 +87,11 @@ export default function Impact() {
         className=" light-section bg-white text-black min-h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className="relative w-[320px] sm:w-[500px] md:w-[700px] lg:w-400 lg:h-200 mx-auto">
+        <div className="relative w-full max-w-[1600px] aspect-[16/9] mx-auto overflow-hidden">
+          {/* w-[320px] sm:w-[500px] md:w-[700px] lg:w-400 lg:h-200 mx-auto */}
           {/* SVG ORBITS */}
           <svg
-            className="absolute  w-full h-full"
+            className="absolute inset-0 w-full h-full"
             viewBox="0 0 1500 800"
             preserveAspectRatio="xMidYMid meet"
           >
@@ -125,28 +126,28 @@ export default function Impact() {
           </svg>
 
           {/* ARROWS */}
-          <div className="bg-red-400 ">
+          <div className="absolute inset-0 pointer-events-none">
             <div
               className="innerArrow absolute text-xl"
-              style={{ top: "400px", left: "-55px" }}
+              style={{ top: "50%", left: "50%" }}
             >
               ▲
             </div>
             <div
               className="innerArrow absolute text-xl"
-              style={{ top: "400px", left: "-55px" }}
+              style={{ top: "50%", left: "50%" }}
             >
               ▲
             </div>
             <div
               className="innerArrow absolute text-xl"
-              style={{ top: "400px", left: "-15px" }}
+              style={{ top: "50%", left: "50%" }}
             >
               ▲
             </div>
             <div
               className="innerArrow absolute text-xl"
-              style={{ top: "400px", left: "-55px" }}
+              style={{ top: "50%", left: "50%" }}
             >
               ▲
             </div>
@@ -154,14 +155,16 @@ export default function Impact() {
 
           {/* CENTER TEXT */}
 
-          <div className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[50%] lg:w-95 -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="absolute top-1/2 left-1/2 w-[90%] sm:w-[75%] md:w-[60%] lg:w-[40%] xl:w-[30%] max-w-[500px] -translate-x-1/2 -translate-y-1/2 text-center px-4">
             {texts.map((item, index) => (
               <div
                 key={index}
                 className="impactText absolute inset-0 opacity-0"
               >
-                <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3">
+                  {item.title}
+                </h2>
+                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>

@@ -30,11 +30,11 @@ export default function Navbar({ openContact }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full px-2 md:px-3 lg:px-4 xl:px-6 py-8 md:py-6 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full box-border px-2 md:px-3 lg:px-4 xl:px-6 py-8 md:py-6 transition-colors duration-300 overflow-x-hidden ${
         darkText ? "text-black" : "text-white"
       }`}
     >
-      <nav className="flex items-center justify-between">
+      <nav className=" flex items-center justify-between">
         <Link href="/" className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ export default function Navbar({ openContact }) {
 
           <button
             onClick={() => setOpen(true)}
-            className=" md:w-25 h-9 md:h-11 px-4 md:px- text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
+            className=" md:w-25 h-9 md:h-11 px-4  text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             Contact us
           </button>
