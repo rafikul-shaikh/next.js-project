@@ -176,7 +176,7 @@ export default function ProductScroll() {
   }, []);
 
   return (
-    <section className="text-black relative bg-white py-12 overflow-hidden">
+    <section className=" light-section text-black relative bg-white py-12 overflow-hidden">
       {/* Moving Cards */}
       <div
         ref={marqueeRef}

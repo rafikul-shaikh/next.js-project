@@ -15,11 +15,11 @@ export default function Technology() {
         </div>
 
         {/* PROGRESS BAR */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 hidden sm:block border border-white/20 px-4 py-4 rounded-sm">
+        {/* <div className="absolute bottom-20 left-1/2 -translate-x-1/2 hidden sm:block border border-white/20 px-4 py-4 rounded-sm">
           <div className="h-2 w-full bg-blue-900/20">
             <div className="h-full w-full origin-left bg-blue-500"></div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* INTRO */}
@@ -53,34 +53,38 @@ export default function Technology() {
             </p>
           </div>
 
-          {/* <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4">
             <li className="flex items-center gap-4">
-              <span className="w-6 border-t border-blue-400"></span>
+              <span className="w-20 border-t border-blue-400"></span>
               <span className="text-xs text-blue-400">
                 Water-based dispersion coatings
               </span>
             </li>
 
             <li className="flex items-center gap-4">
-              <span className="w-2 h-6 border border-gray-500"></span>
+              <span className="w-20 h-2 border border-gray-500"></span>
               <span className="text-xs text-white/80">
                 High performance paper
               </span>
             </li>
 
             <li className="flex items-center gap-4">
-              <img src="/dotted-pattern.svg" alt="" className="w-6 h-6" />
+              <img
+                src="https://nfinitepaper.com/_next/static/media/dotted-pattern.4760b076.svg"
+                alt=""
+                className="w-20 h-4"
+              />
               <span className="text-xs text-white/80">
                 Nfinite SALD barrier coating
               </span>
             </li>
-          </ul> */}
+          </ul>
         </div>
       </div>
 
       {/* PART 2 */}
       <div className="relative flex w-full flex-col">
-        <h3 className="flex h-screen w-full flex-col justify-center gap-6 text-center text-3xl md:text-8xl py-20">
+        <h3 className="px-4 flex h-screen w-full flex-col justify-center gap-6 text-center text-3xl md:text-8xl py-20">
           <span className="self-start text-left">Hundreds of layers</span>
           <span className="self-start text-left text-white/80">
             by Spatial Atomic Layer Deposition
@@ -97,7 +101,7 @@ export default function Technology() {
 
               <div className="flex flex-col gap-6">
                 {/* LABELS */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 pt-6">
                   <div className="flex items-center gap-2 border border-white/20 px-3 py-2 rounded">
                     <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                     <span className="text-xs text-white/80">
@@ -116,12 +120,9 @@ export default function Technology() {
                   Spatial Atomic Layer Deposition (SALD) process using two
                   simple gases: a metal source and a reactant, separated by
                   nitrogen. These gases react in sequence, forming hundreds of
-                  mineral layers only a few atoms thick.
-                  <br />
-                  <br />
-                  The result is an invisible coating that gives paper the same
-                  protective performance as plastic, without changing its look
-                  or feel.
+                  mineral layers only a few atoms thick. The result is an
+                  invisible coating that gives paper the same protective
+                  performance as plastic, without changing its look or feel.
                 </p>
               </div>
             </div>

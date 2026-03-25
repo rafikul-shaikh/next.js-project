@@ -52,7 +52,7 @@ export default function Navbar({ openContact }) {
         </Link>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-4 md:gap-9">
+        <div className=" font-[mainFont]  flex items-center gap-4 md:gap-11">
           <div className="hidden md:flex items-center gap-11 text-[13px] font-normal tracking-wide">
             <a href="#specifications" className="relative pb-1 group">
               Specifications
@@ -82,7 +82,7 @@ export default function Navbar({ openContact }) {
 
           <button
             onClick={() => setOpen(true)}
-            className=" md:w-25 h-9 md:h-11 px-4  text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
+            className=" md:w-27 h-9 md:h-12 px-5  text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             Contact us
           </button>
