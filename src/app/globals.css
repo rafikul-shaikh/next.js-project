@@ -26,7 +26,7 @@
 
 /* Apply globally */
 :root {
-  font-family: "mainFont", "mainFont fallback", sans-serif;
+  font-family: "mainFont", "mainFont Fallback", sans-serif;
 }
 /* for smooth scrolling  */
 html {

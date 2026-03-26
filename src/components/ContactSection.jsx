@@ -24,8 +24,11 @@ export default function ContactSection({ openContact }) {
           </svg>
         </div>
 
-        <h2 className="font-normal font text-xl sm:text-2xl md:text-3xl max-w-xl text-gray-800 leading-normal mb-12">
-          Subscribe to learn more about how our paper can eliminate plastic
+        <h2 className="font-medium font text-xl sm:text-2xl md:text-4xl text-center text-black leading-tight mb-12">
+          Subscribe to learn more about how
+          <br />
+          our paper can eliminate plastic
+          <br />
           packaging from daily life
         </h2>
 

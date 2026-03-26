@@ -87,7 +87,7 @@ export default function Impact() {
         className=" light-section  text-black bg-white] min-h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className="relative w-full max-w-[1600px] aspect-[16/9] mx-auto overflow-hidden">
+        <div className="relative w-full max-w-[1600px] aspect-[4/3] sm:aspect-[16/9] mx-auto overflow-hidden">
           {/* w-[320px] sm:w-[500px] md:w-[700px] lg:w-400 lg:h-200 mx-auto */}
           {/* SVG ORBITS */}
           <svg
@@ -155,7 +155,7 @@ export default function Impact() {
 
           {/* CENTER TEXT */}
 
-          <div className="absolute top-1/2 left-1/2 w-[90%] sm:w-[75%] md:w-[60%] lg:w-[40%] xl:w-[30%] max-w-[500px] -translate-x-1/2 -translate-y-1/2 text-center px-4">
+          <div className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[55%] lg:w-[40%] xl:w-[30%] max-w-[500px] -translate-x-1/2 -translate-y-1/2 text-center px-4">
             {texts.map((item, index) => (
               <div
                 key={index}
