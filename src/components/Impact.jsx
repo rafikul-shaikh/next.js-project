@@ -33,6 +33,11 @@ export default function Impact() {
       const arrows = gsap.utils.toArray(".innerArrow");
       const texts = gsap.utils.toArray(".impactText");
 
+      gsap.set(".impactText", {
+        opacity: 0,
+        y: 60, // start from bottom
+      });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
@@ -65,12 +70,31 @@ export default function Impact() {
         );
       });
 
-      // TEXT CHANGE (runs together with rotation)
+      // TEXT CHANGE animation (runs together with rotation)
+
       texts.forEach((text, i) => {
-        tl.to(text, { opacity: 1, duration: 0.5 }, i * 0.8).to(
+        tl.fromTo(
           text,
-          { opacity: 0, duration: 0.5 },
-          i * 0.8 + 0.8,
+          {
+            opacity: i === 0 ? 1 : 0,
+            y: i === 0 ? 0 : 60,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          i * 1.2,
+        ).to(
+          text,
+          {
+            opacity: 0,
+            y: -60,
+            duration: 0.6,
+            ease: "power3.in",
+          },
+          i * 1.2 + 0.6,
         );
       });
     }, container);
@@ -83,14 +107,13 @@ export default function Impact() {
       <section
         id="impact"
         ref={container}
-        className=" light-section  text-black bg-white] min-h-screen  flex items-center justify-center "
+        className=" light-section  text-black bg-white h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className="relative w-full max-w-[1600px] aspect-[4/3] sm:aspect-[16/9] mx-auto overflow-hidden">
-          {/* w-[320px] sm:w-[500px] md:w-[700px] lg:w-400 lg:h-200 mx-auto */}
+        <div className=" relative w-full max-w-[1600px] aspect-square sm:aspect-[16/9] mt-[-40px] md:mt-[-15px] mx-auto overflow-hidden">
           {/* SVG ORBITS */}
           <svg
-            className="absolute inset-0 w-full h-full"
+            className="absolute left-1/2 -translate-x-1/2 w-[140%] sm:w-[110%] md:w-full h-full"
             viewBox="0 0 1500 800"
             preserveAspectRatio="xMidYMid meet"
           >
@@ -101,7 +124,6 @@ export default function Impact() {
               rx="720"
               ry="260"
               stroke="#999"
-              // strokeDasharray="3 6"
               strokeDasharray="1 3"
               strokeLinecap="round"
               fill="none"
@@ -113,7 +135,6 @@ export default function Impact() {
               id="innerPath"
               d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
               stroke="#999"
-              // strokeDasharray="3 6"
               strokeDasharray="1 3"
               strokeLinecap="round"
               fill="none"
@@ -151,28 +172,20 @@ export default function Impact() {
           {/* CENTER TEXT */}
 
           <div
-            className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[55%] lg:w-[40%] xl:w-[30%] max-w-[500px]
-           -translate-x-1/2 -translate-y-1/2 text-center px-2 sm:px-3 md:px-4"
+            className="absolute top-1/2 left-1/2 
+  w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px]
+  -translate-x-1/2 -translate-y-1/2 
+  text-center px-4 sm:px-6 md:px-8
+  flex items-center justify-center"
           >
             {texts.map((item, index) => (
               <div
                 key={index}
-                className="impactText absolute inset-0 opacity-0 flex flex-col items-center justify-center"
+                className="impactText absolute inset-0 opacity-0 flex items-center justify-center"
               >
-                {/* <img
-                  src={item.Icon}
-                  alt="Loading..."
-                  className="mb-8 w-4 h-4 sm:w-5 sm:h-5 md:w-10 md:h-10"
-                />
-                <h2 className="text-[12px] sm:text-[14px] md:text-[18px] lg:text-[22px] font-semibold mb-1 md:mb-2 leading-snug">
-                  {item.title}
-                </h2>
-                <p className="text-gray-600 text-[10px] sm:text-[11px] md:text-[13px] lg:text-[15px] leading-tight md:leading-snug">
-                  {item.desc}
-                </p> */}
-                <div className="-mt-6 flex flex-col items-center justify-center gap-6 text-center opacity-100 visible">
+                <div className="-mt-6 w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 text-center scale-[0.85] sm:scale-[0.9] md:scale-100 lg:scale-105 xl:scale-110">
                   {/* ICON */}
-                  <div className="w-8 h-8">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <img
                       src={item.Icon}
                       alt=""
@@ -182,13 +195,13 @@ export default function Impact() {
                   </div>
 
                   {/* TITLE */}
-                  <h2 className="max-w-[260px] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[21px] leading-snug">
+                  <h2 className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[240px] text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
                     {item.title}
                   </h2>
 
                   {/* DESCRIPTION */}
-                  <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[70%]">
-                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-500 my-4">
+                  <div className="w-full max-w-[85%] sm:max-w-[75%] md:max-w-[65%]">
+                    <p className="text-[10px] sm:text-[11px] md:text-[13px] text-gray-500 my-2 sm:my-3 md:my-4">
                       {item.desc}
                     </p>
                   </div>
