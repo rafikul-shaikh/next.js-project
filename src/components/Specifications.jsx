@@ -48,7 +48,7 @@ export default function Specifications() {
         className="light-section  text-black bg-[#dff2f3] px-4 sm:px-6 md:px-10 lg:px-13 py-10 rounded-lg max-w-full h-full mt-20"
       >
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between   border-b border-gray-300">
+        <div className="flex flex-col md:flex-row md:justify-between  border-b border-gray-300">
           <div className=" mb-32 flex items-center gap-4">
             <img
               src="https://nfinitepaper.com/cdn/e3d8c4e92a1bd81ff46619d8647885be3f59e496-24x24.svg?auto=format"
@@ -58,12 +58,12 @@ export default function Specifications() {
             <h2 className=" text-2xl font-normal">Barrier Performance</h2>
           </div>
 
-          <div className=" p-2 rounded-lg  mr-12 w-full md:max-w-sm space-y-6">
-            <div className="flex items-center gap-6 ">
+          <div className="rounded-lg  mr-12 w-full md:max-w-sm space-y-6">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 ">
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Moisture
               </div>
-              <p className=" ml-8 text-sm text-gray-500">
+              <p className=" ml-15 text-xs text-gray-500">
                 &lt;0.3 g/m2/day WVTR (38°C, 90% RH)
               </p>
             </div>
@@ -71,16 +71,16 @@ export default function Specifications() {
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Oxygen
               </div>
-              <p className=" ml-8 text-sm text-gray-500">
+              <p className=" ml-15 text-xs text-gray-500">
                 &lt;1 cc/m2/day OTR (23°C, 50% RH)
               </p>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Grease
               </div>
-              <p className=" ml-8 text-sm text-gray-500">
+              <p className=" ml-15 text-xs text-gray-500">
                 Excellent resistance to grease and oils
               </p>
             </div>

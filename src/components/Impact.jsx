@@ -84,7 +84,7 @@ export default function Impact() {
       <section
         id="impact"
         ref={container}
-        className=" light-section bg-white text-black min-h-screen  flex items-center justify-center "
+        className=" light-section  text-black bg-white] min-h-screen  flex items-center justify-center "
         // h-[200vh
       >
         <div className="relative w-full max-w-[1600px] aspect-[16/9] mx-auto overflow-hidden">
@@ -172,17 +172,17 @@ export default function Impact() {
           </div>
         </div>
       </section>
-      <section className="min-h-50  flex flex-col items-center justify-end">
-        <div>
-          <div>
-            <div className="text-center">
-              <h2 className="text-xl font-bold mb-18">Our Impact</h2>
-              <h3 className=" max-w-5xl mx-auto mb-22 text-black text-2xl sm:text-2xl md:text-6xl lg:text-7xl font-normal leading-none">
-                A 40% lower carbon footprint 2 trillion fewer plastic packages
-                polluting the environment
-              </h3>
-            </div>
-          </div>
+
+      <section id="impact" className="light-section text-black relative ">
+        <div className="flex flex-col items-center gap-6 md:gap-16  text-center">
+          <span className="rounded-sm border border-black/10 px-3 py-1 text-[11px] md:text-[13px] uppercase">
+            Our Impact
+          </span>
+
+          <h2 className="mb-22 max-w-4xl text-[24px] sm:text-[32px] md:text-[56px] lg:text-[72px] xl:text-[84px] leading-none">
+            A 40% lower carbon footprint <br />2 trillion fewer plastic packages
+            polluting the environment
+          </h2>
         </div>
       </section>
     </>

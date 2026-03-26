@@ -8,9 +8,9 @@ export default function OurBarrier() {
 
   const faqs = [
     {
-      question: "Does Nfinite paper require lamination ? ",
+      question: "What exactly does Nfinite sell?",
       answer:
-        "No, Nfinite paper doesn’t use any lamination. It looks, feels, and performs like real paper without the need for a plastic film.",
+        "We sell semi-finished, ultra-high barrier paper in 1-meter-wide rolls that are printable, sealable, and ready for downstream converting.",
     },
     {
       question: "Does Nfinite paper require lamination ?",
@@ -51,7 +51,7 @@ export default function OurBarrier() {
           <source src="/high.mp4" type="video/mp4" />
         </video>
 
-        <p className="max-w-4xl px-4 text-white text-2xl md:text-6xl font-normal leading-none drop-shadow-lg">
+        <p className="max-w-4xl px-4 text-white text-2xl md:text-6xl font-normal leading-tight drop-shadow-lg">
           Our High Barrier Paper Manufacturing Plant, scaling sustainable
           packaging in North America
         </p>
@@ -60,7 +60,7 @@ export default function OurBarrier() {
       {/* Horizontal Scrolling with snap section */}
       <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar">
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-4xl text-3xl md:text-5xl font-normal leading-tight">
             {/* mx-auto  */}
             "Nfinite shares our commitment to creating a circular economy, and
             we look forward to continuing to work with them to develop
@@ -74,7 +74,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-4xl  text-3xl md:text-5xl font-normal leading-tight">
             "PepsiCo R&D started working with the Nfinite team while they were
             at the University of Waterloo, and in the short span of two years,
             they have made rapid progress from lab-scale technology to actual
@@ -88,7 +88,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-tight">
             "Amcor is excited to be both an early-stage investor and a strategic
             collaboration partner to Nfinite on this ground breaking project."
           </p>
@@ -100,7 +100,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-none">
+          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-tight">
             "We are collaborating with partners like Nfinite to develop the next
             generation of recyclable and compostable flexible packaging with
             ultra-thin barrier coatings that meet the performance needs of our
@@ -121,7 +121,7 @@ export default function OurBarrier() {
           {/* LEFT SIDE */}
           <div className="flex items-center justify-center px-6 md:px-10 md:border-r border-gray-300">
             <div className="text-center max-w-xl">
-              <span className="font-semibold border px-3 py-1 text-xs rounded">
+              <span className="rounded-sm border border-black/10 px-3 py-2 text-[11px] md:text-[13px] uppercase">
                 FAQ
               </span>
 
@@ -140,7 +140,7 @@ export default function OurBarrier() {
                   onClick={() => toggle(index)}
                   className="w-full flex justify-between items-center px-10 py-6 md:py-10 text-left"
                 >
-                  <span className="text-lg">{item.question}</span>
+                  <span className="text-xl">{item.question}</span>
 
                   <ChevronDown
                     className={`transition-transform duration-300 ${
@@ -150,7 +150,7 @@ export default function OurBarrier() {
                 </button>
 
                 {open === index && (
-                  <div className="px-10 pb-6 text-gray-600 max-w-xl">
+                  <div className="text-sm px-10 pb-8 text-gray-600 max-w-xl">
                     {item.answer}
                   </div>
                 )}
