@@ -12,20 +12,19 @@ export default function Impact() {
 
   const texts = [
     {
-      title: "Paper recycling to end flexible plastics pollution",
-      desc: "Unlike 98% of flexible plastic packages, Nfinite packages are 100% curbside recyclable.",
-    },
-    {
       title: "Sustainably sourced wood turned into paper",
-      desc: "All our packaging is made from FSC or PEFC Certified paper - responsibly sourced to protect forest, support communities , and unhold the highest sustainablity standard  ",
+      desc: "All our packaging is made from FSC or PEFC-certified paper-responsibly sourced to protect forests, support communities, and uphold the highest sustainability standards.",
+      Icon: "/image/icon-1.svg",
     },
     {
-      title: "Plastic-free barrier technology",
-      desc: "Our coating technology protects food while remaining recyclable.",
+      title: "A Reduced Manufacturing Carbon footprint",
+      desc: "Our coating process operates at low temperature with high energy efficiency, keeping our manufacturing carbon footprint low while avoiding any persistent environmental pollutants.",
+      Icon: "/image/icon-2.svg",
     },
     {
-      title: "Designed for circular economy",
-      desc: "Packaging designed to return back into the paper recycling stream.",
+      title: "Paper recycling to end flexible plastics pollution",
+      desc: "Unlike 98% of flexible plastic packages, which end up in landfills, incinerated, or polluting the environment, Nfinite packages are 100% curbside recyclable in standard paper recycling streams worldwide. That means your packaging can be recycled easily, every time, anywhere.",
+      Icon: "/image/icon-3.svg",
     },
   ];
 
@@ -102,25 +101,21 @@ export default function Impact() {
               rx="720"
               ry="260"
               stroke="#999"
-              strokeDasharray="3 6"
+              // strokeDasharray="3 6"
+              strokeDasharray="1 3"
+              strokeLinecap="round"
               fill="none"
             />
 
             {/* INNER CIRCLE PATH */}
-            {/* <path
-              id="innerPath"
-              d="M750,400 m-260,0
-               a260,260 0 1,1 520,0
-               a260,260 0 1,1 -520,0"
-              stroke="#999"
-              strokeDasharray="3 6"
-              fill="none"
-            /> */}
+
             <path
               id="innerPath"
               d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
               stroke="#999"
-              strokeDasharray="3 6"
+              // strokeDasharray="3 6"
+              strokeDasharray="1 3"
+              strokeLinecap="round"
               fill="none"
             />
           </svg>
@@ -155,18 +150,49 @@ export default function Impact() {
 
           {/* CENTER TEXT */}
 
-          <div className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[55%] lg:w-[40%] xl:w-[30%] max-w-[500px] -translate-x-1/2 -translate-y-1/2 text-center px-4">
+          <div
+            className="absolute top-1/2 left-1/2 w-[85%] sm:w-[70%] md:w-[55%] lg:w-[40%] xl:w-[30%] max-w-[500px]
+           -translate-x-1/2 -translate-y-1/2 text-center px-2 sm:px-3 md:px-4"
+          >
             {texts.map((item, index) => (
               <div
                 key={index}
-                className="impactText absolute inset-0 opacity-0"
+                className="impactText absolute inset-0 opacity-0 flex flex-col items-center justify-center"
               >
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3">
+                {/* <img
+                  src={item.Icon}
+                  alt="Loading..."
+                  className="mb-8 w-4 h-4 sm:w-5 sm:h-5 md:w-10 md:h-10"
+                />
+                <h2 className="text-[12px] sm:text-[14px] md:text-[18px] lg:text-[22px] font-semibold mb-1 md:mb-2 leading-snug">
                   {item.title}
                 </h2>
-                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
+                <p className="text-gray-600 text-[10px] sm:text-[11px] md:text-[13px] lg:text-[15px] leading-tight md:leading-snug">
                   {item.desc}
-                </p>
+                </p> */}
+                <div className="-mt-6 flex flex-col items-center justify-center gap-6 text-center opacity-100 visible">
+                  {/* ICON */}
+                  <div className="w-8 h-8">
+                    <img
+                      src={item.Icon}
+                      alt=""
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* TITLE */}
+                  <h2 className="max-w-[260px] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[21px] leading-snug">
+                    {item.title}
+                  </h2>
+
+                  {/* DESCRIPTION */}
+                  <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[70%]">
+                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-500 my-4">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
