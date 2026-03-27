@@ -1,6 +1,99 @@
 "use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Technology() {
+  gsap.registerPlugin(ScrollTrigger);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    let width = canvas.offsetWidth;
+    let height = canvas.offsetHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const COUNT = 5000;
+    let particles = [];
+
+    // 🎯 Rectangle config (TARGET)
+    const rectWidth = width * 0.6;
+    const rectHeight = height * 0.7;
+
+    const rectStartX = width / 2 - rectWidth / 2;
+    const rectStartY = height / 2 - rectHeight / 2;
+
+    // 🔵 Create particles
+    for (let i = 0; i < COUNT; i++) {
+      // ✅ START = FULL SCREEN (random spread)
+      let startX = Math.random() * width;
+      let startY = Math.random() * height;
+
+      // ✅ TARGET = RECTANGLE GRID (clean shape)
+      let col = i % 100;
+      let row = Math.floor(i / 100);
+
+      let targetX = rectStartX + (col / 100) * rectWidth;
+      let targetY = rectStartY + (row / 50) * rectHeight;
+
+      particles.push({
+        startX,
+        startY,
+        targetX,
+        targetY,
+      });
+    }
+
+    let progress = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach((p) => {
+        let x = p.startX + (p.targetX - p.startX) * progress;
+        let y = p.startY + (p.targetY - p.startY) * progress;
+
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, y, 1.5, 1.5);
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    // 🔥 ScrollTrigger
+    gsap.to(
+      { value: 0 },
+      {
+        value: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: canvas,
+          start: "top top",
+          end: "+=1200",
+          scrub: true,
+          pin: true,
+        },
+        onUpdate: function () {
+          progress = this.targets()[0].value;
+        },
+      },
+    );
+
+    // 📱 Responsive
+    window.addEventListener("resize", () => {
+      width = canvas.offsetWidth;
+      height = canvas.offsetHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  }, []);
+
   return (
     <section
       id="technology"
@@ -10,7 +103,7 @@ export default function Technology() {
       <div className="sticky top-0 z-0 h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <div className="h-full w-full">
-            <canvas className="h-full w-full"></canvas>
+            <canvas ref={canvasRef} className="h-full w-full"></canvas>
           </div>
         </div>
 
