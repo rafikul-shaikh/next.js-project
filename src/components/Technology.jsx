@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Technology() {
   gsap.registerPlugin(ScrollTrigger);
   const canvasRef = useRef(null);
-
+  function noise(x, y, t) {
+    return Math.sin(x * 0.01 + t) + Math.cos(y * 0.01 + t);
+  }
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -17,48 +19,78 @@ export default function Technology() {
     canvas.width = width;
     canvas.height = height;
 
-    const COUNT = 5000;
+    const ROWS = 100;
+    const COLS = 100;
+    const LINE_COUNT = 12;
+
     let particles = [];
 
-    // 🎯 Rectangle config (TARGET)
-    const rectWidth = width * 0.6;
-    const rectHeight = height * 0.7;
+    // Create particles
+    for (let i = 0; i < ROWS * COLS; i++) {
+      let col = i % COLS;
+      let row = Math.floor(i / COLS);
 
-    const rectStartX = width / 2 - rectWidth / 2;
-    const rectStartY = height / 2 - rectHeight / 2;
+      // Stage 1 → FULL SCREEN NOISE
+      let noiseX = Math.random() * width;
+      let noiseY = Math.random() * height;
 
-    // 🔵 Create particles
-    for (let i = 0; i < COUNT; i++) {
-      // ✅ START = FULL SCREEN (random spread)
-      let startX = Math.random() * width;
-      let startY = Math.random() * height;
+      // Stage 2 → RECTANGLE
+      let rectW = width * 0.6;
+      let rectH = height * 0.7;
 
-      // ✅ TARGET = RECTANGLE GRID (clean shape)
-      let col = i % 100;
-      let row = Math.floor(i / 100);
+      let rectX = width / 2 - rectW / 2 + (col / COLS) * rectW;
+      let rectY = height / 2 - rectH / 2 + (row / ROWS) * rectH;
 
-      let targetX = rectStartX + (col / 100) * rectWidth;
-      let targetY = rectStartY + (row / 50) * rectHeight;
+      // Stage 3 → LINES
+      let lineIndex = Math.floor((row / ROWS) * LINE_COUNT);
+
+      let lineY = height * 0.2 + (lineIndex / (LINE_COUNT - 1)) * height * 0.6;
+
+      let lineX = (col / COLS) * width;
 
       particles.push({
-        startX,
-        startY,
-        targetX,
-        targetY,
+        noiseX,
+        noiseY,
+        rectX,
+        rectY,
+        lineX,
+        lineY,
       });
     }
 
     let progress = 0;
 
+    // Draw loop
     function draw() {
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        let x = p.startX + (p.targetX - p.startX) * progress;
-        let y = p.startY + (p.targetY - p.startY) * progress;
+        let x, y;
+
+        // Stage 1 → Noise → Rectangle
+        if (progress < 0.3) {
+          let t = progress / 0.3;
+
+          x = p.noiseX + (p.rectX - p.noiseX) * t;
+          y = p.noiseY + (p.rectY - p.noiseY) * t;
+        }
+
+        // Stage 2 → Rectangle → Lines
+        else if (progress < 0.7) {
+          let t = (progress - 0.3) / 0.4;
+
+          x = p.rectX + (p.lineX - p.rectX) * t;
+          y = p.rectY + (p.lineY - p.rectY) * t;
+        }
+
+        // Stage 3 → Final lines
+        else {
+          x = p.lineX;
+          y = p.lineY;
+        }
 
         ctx.fillStyle = "white";
-        ctx.fillRect(x, y, 1.5, 1.5);
+        ctx.fillRect(x, y, 1.2, 1.2);
       });
 
       requestAnimationFrame(draw);
@@ -66,16 +98,16 @@ export default function Technology() {
 
     draw();
 
-    // 🔥 ScrollTrigger
+    // Scroll Animation
     gsap.to(
       { value: 0 },
       {
         value: 1,
         ease: "none",
         scrollTrigger: {
-          trigger: canvas,
+          trigger: "#technology",
           start: "top top",
-          end: "+=1200",
+          end: "+=2000",
           scrub: true,
           pin: true,
         },
@@ -85,7 +117,19 @@ export default function Technology() {
       },
     );
 
-    // 📱 Responsive
+    // Parallax (background move like real site)
+    gsap.to(".tech-background", {
+      y: "-20%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#technology",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // Resize fix
     window.addEventListener("resize", () => {
       width = canvas.offsetWidth;
       height = canvas.offsetHeight;
@@ -116,7 +160,7 @@ export default function Technology() {
       </div>
 
       {/* INTRO */}
-      <div className="relative flex h-screen w-full items-start justify-center -mt-[80vh] pt-24 md:pt-32 lg:pt-40 ">
+      <div className="relative z-10 flex h-screen w-full items-start justify-center -mt-[80vh] pt-24 md:pt-32 lg:pt-40 ">
         <h2 className="text-4xl md:text-8xl text-center ">
           Our Barrier Technology
         </h2>
@@ -126,7 +170,7 @@ export default function Technology() {
       <div className="h-[50vh] w-full"></div>
 
       {/* PART 1 */}
-      <div className="relative flex min-h-screen items-end md:items-start">
+      <div className="relative  z-10 flex min-h-screen items-end md:items-start">
         <div className="flex flex-col gap-10 px-6 sm:px-10 md:px-35 py-10 md:mt-40 md:gap-12 md:pb-12 max-w-xl">
           <h3 className="  text-lg sm:text-xl md:text-3xl leading-snug">
             <span className="text-blue-400">water-based</span> dispersion
@@ -176,7 +220,7 @@ export default function Technology() {
       </div>
 
       {/* PART 2 */}
-      <div className="relative flex w-full flex-col">
+      <div className="relative z-10 flex w-full flex-col">
         <h3 className="px-4 flex h-screen w-full flex-col justify-center gap-6 text-center text-3xl md:text-8xl py-20">
           <span className="self-start text-left">Hundreds of layers</span>
           <span className="self-start text-left text-white/80">
