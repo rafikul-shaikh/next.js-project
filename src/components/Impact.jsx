@@ -172,11 +172,8 @@ export default function Impact() {
           {/* CENTER TEXT */}
 
           <div
-            className="absolute top-1/2 left-1/2 
-  w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px]
-  -translate-x-1/2 -translate-y-1/2 
-  text-center px-4 sm:px-6 md:px-8
-  flex items-center justify-center"
+            className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px]
+            -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center"
           >
             {texts.map((item, index) => (
               <div
