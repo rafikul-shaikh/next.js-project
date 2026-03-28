@@ -19,8 +19,8 @@ export default function Technology() {
     canvas.width = width;
     canvas.height = height;
 
-    const ROWS = 100;
-    const COLS = 100;
+    const ROWS = 200;
+    const COLS = 200;
     const LINE_COUNT = 12;
 
     let particles = [];
@@ -48,6 +48,18 @@ export default function Technology() {
 
       let lineX = (col / COLS) * width;
 
+      //  weighted size distribution
+      let rand = Math.random();
+      let size;
+
+      if (rand < 0.8) {
+        size = 1; // small (80%)
+      } else if (rand < 0.95) {
+        size = 2; // medium (19%)
+      } else {
+        size = 3.5; // large highlight (1%)
+      }
+
       particles.push({
         noiseX,
         noiseY,
@@ -55,6 +67,7 @@ export default function Technology() {
         rectY,
         lineX,
         lineY,
+        size,
       });
     }
 
@@ -90,7 +103,7 @@ export default function Technology() {
         }
 
         ctx.fillStyle = "white";
-        ctx.fillRect(x, y, 1.2, 1.2);
+        ctx.fillRect(x, y, p.size, p.size);
       });
 
       requestAnimationFrame(draw);
