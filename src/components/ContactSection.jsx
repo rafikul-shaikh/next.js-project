@@ -5,9 +5,7 @@ export default function ContactSection({ openContact }) {
     <section className="max-w-9xl mx-auto px-3 mt-12">
       {/* Main Container */}
 
-      <div className="min-h-[400px] md:min-h-[500px] lg:min-h-[600px bg-[#dff2f3] rounded-sm py-20 flex flex-col items-center justify-center text-center">
-        {/* #c6dde1 */}
-        {/* 8ab4fc */}
+      <div className="min-h-100 md:min-h-125 lg:min-h-[600px bg-[#dff2f3] rounded-sm py-20 flex flex-col items-center justify-center text-center">
         <div className="mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"

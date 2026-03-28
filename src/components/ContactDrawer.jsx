@@ -1,13 +1,12 @@
 "use client";
 
 import { X } from "lucide-react";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 export default function ContactDrawer({ isOpen, closeContact }) {
   return (
     <div
-      className={`fixed top-0 right-0 h-full w-[650px] bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
+      className={`fixed top-0 right-0 h-full w-162.5 bg-[#d6e3e6] text-black z-50 transform transition-transform duration-500 ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

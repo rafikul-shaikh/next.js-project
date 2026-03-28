@@ -117,7 +117,7 @@ export default function OurBarrier() {
 
       {/* FAQ section  */}
       <section className=" light-section bg-white text-black border-t border-b border-gray-300">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0 py-10 md:py-0 min-h-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0 py-10 md:py-0 min-h-100">
           {/* LEFT SIDE */}
           <div className="flex items-center justify-center px-6 md:px-10 md:border-r border-gray-300">
             <div className="text-center max-w-xl">
@@ -135,25 +135,35 @@ export default function OurBarrier() {
           {/* RIGHT SIDE */}
           <div>
             {faqs.map((item, index) => (
-              <div key={index} className="border-b border-gray-300">
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-10 py-6 md:py-10 text-left"
-                >
-                  <span className="text-xl">{item.question}</span>
+              <div
+                key={index}
+                onClick={() => toggle(index)}
+                className=" cursor-pointer border-b border-gray-300"
+              >
+                {/* button */}
+                <div className="w-full flex justify-between items-center px-10 py-6 md:py-10 text-left">
+                  <span className="text-xl ">{item.question}</span>
 
                   <ChevronDown
                     className={`transition-transform duration-300 ${
                       open === index ? "rotate-180" : ""
                     }`}
                   />
-                </button>
+                </div>
 
-                {open === index && (
-                  <div className="text-sm px-10 pb-8 text-gray-600 max-w-xl">
-                    {item.answer}
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    open === index
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="text-sm sm:text-base px-6 sm:px-10 pb-6 sm:pb-8 text-gray-600 max-w-xl leading-relaxed ">
+                      {item.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>

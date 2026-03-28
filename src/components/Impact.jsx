@@ -110,7 +110,7 @@ export default function Impact() {
         className=" light-section  text-black bg-white h-screen  flex items-center justify-center "
         // h-[200vh
       >
-        <div className=" relative w-full max-w-[1600px] aspect-square sm:aspect-[16/9] mt-[-40px] md:mt-[-15px] mx-auto overflow-hidden">
+        <div className=" relative w-full max-w-400 aspect-square sm:aspect-[16/9] mt-[-40px] md:mt-[-15px] mx-auto overflow-hidden">
           {/* SVG ORBITS */}
           <svg
             className="absolute left-1/2 -translate-x-1/2 w-[140%] sm:w-[110%] md:w-full h-full"
@@ -172,8 +172,8 @@ export default function Impact() {
           {/* CENTER TEXT */}
 
           <div
-            className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px]
-            -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center"
+            className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-105 -translate-x-1/2 -translate-y-1/2
+               text-center px-4 sm:px-6 md:px-8 flex items-center justify-center"
           >
             {texts.map((item, index) => (
               <div
@@ -192,7 +192,7 @@ export default function Impact() {
                   </div>
 
                   {/* TITLE */}
-                  <h2 className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[240px] text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
+                  <h2 className="w-full max-w-45 sm:max-w-50 md:max-w-60 text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
                     {item.title}
                   </h2>
 

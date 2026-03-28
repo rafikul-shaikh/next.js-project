@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-// import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 export default function Specifications() {
@@ -93,7 +92,7 @@ export default function Specifications() {
           <div key={index} className="border-b border-gray-300">
             {/* Title Row */}
             <div
-              className="flex justify-between items-center py-6 cursor-pointer"
+              className="flex justify-between items-center py-6 cursor-pointer  "
               onClick={() => setOpen(open === index ? null : index)}
             >
               {/* LEFT SIDE (ICON + TITLE) */}
@@ -117,9 +116,18 @@ export default function Specifications() {
             </div>
 
             {/* Dropdown Content */}
-            {open === index && (
-              <div className="pb-6 text-gray-600 text-sm">{item.value}</div>
-            )}
+
+            <div
+              className={`grid transition-all duration-500 ease-in-out ${
+                open === index
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="pb-6 text-gray-600 text-sm">{item.value}</div>
+              </div>
+            </div>
           </div>
         ))}
       </section>

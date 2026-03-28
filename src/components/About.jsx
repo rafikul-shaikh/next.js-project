@@ -32,7 +32,7 @@ export default function About() {
 
         {/* IMAGE */}
         <div className="md:col-span-6 flex justify-end mt-6 md:ml-10">
-          <div className="relative w-full max-w-[500px] h-[350px] md:h-[600px] rounded-lg overflow-hidden">
+          <div className="relative w-full max-w-125 h-87.5 md:h-150 rounded-lg overflow-hidden">
             <img src="/Lab.avif" alt="Lab" className="object-cover" />
           </div>
         </div>
