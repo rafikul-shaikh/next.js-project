@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Technology from "@/components/Technology";
-import ProductScroll from "@/components/ProductScroll";
+import ProductMarquee from "@/components/ProductMarquee";
 import ContactSection from "@/components/ContactSection";
 import Specifications from "@/components/Specifications";
 import News from "@/components/News";
@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <Navbar openContact={() => setIsContactOpen(true)} />
       <Hero />
-      <ProductScroll />
+      <ProductMarquee />
       <Specifications/>
       <Technology/>
       <Impact/>

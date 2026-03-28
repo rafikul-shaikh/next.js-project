@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function ProductScroll() {
+export default function ProductMarquee() {
   const marqueeRef = useRef(null);
 
   useEffect(() => {
