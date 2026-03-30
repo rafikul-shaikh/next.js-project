@@ -48,18 +48,6 @@ export default function Technology() {
 
       let lineX = (col / COLS) * width;
 
-      //  weighted size distribution
-      let rand = Math.random();
-      let size;
-
-      if (rand < 0.8) {
-        size = 1; // small (80%)
-      } else if (rand < 0.95) {
-        size = 2; // medium (19%)
-      } else {
-        size = 3.5; // large highlight (1%)
-      }
-
       particles.push({
         noiseX,
         noiseY,
@@ -67,7 +55,10 @@ export default function Technology() {
         rectY,
         lineX,
         lineY,
-        size,
+        px: noiseX,
+        py: noiseY,
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5,
       });
     }
 
@@ -78,32 +69,50 @@ export default function Technology() {
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        let x, y;
+        let targetX, targetY;
 
-        // Stage 1 → Noise → Rectangle
+        //  SHAPE MORPH (same as before)
         if (progress < 0.3) {
           let t = progress / 0.3;
-
-          x = p.noiseX + (p.rectX - p.noiseX) * t;
-          y = p.noiseY + (p.rectY - p.noiseY) * t;
-        }
-
-        // Stage 2 → Rectangle → Lines
-        else if (progress < 0.7) {
+          targetX = p.noiseX + (p.rectX - p.noiseX) * t;
+          targetY = p.noiseY + (p.rectY - p.noiseY) * t;
+        } else if (progress < 0.7) {
           let t = (progress - 0.3) / 0.4;
-
-          x = p.rectX + (p.lineX - p.rectX) * t;
-          y = p.rectY + (p.lineY - p.rectY) * t;
+          targetX = p.rectX + (p.lineX - p.rectX) * t;
+          targetY = p.rectY + (p.lineY - p.rectY) * t;
+        } else {
+          targetX = p.lineX;
+          targetY = p.lineY;
         }
 
-        // Stage 3 → Final lines
-        else {
-          x = p.lineX;
-          y = p.lineY;
-        }
+        // -------------------------
+        // REAL PARTICLE MOTION
+        // -------------------------
 
+        // random wandering (like real website)
+        p.vx += (Math.random() - 0.5) * 0.6;
+        p.vy += (Math.random() - 0.5) * 0.6;
+
+        // limit speed
+        let maxSpeed = 4;
+        p.vx = Math.max(-maxSpeed, Math.min(maxSpeed, p.vx));
+        p.vy = Math.max(-maxSpeed, Math.min(maxSpeed, p.vy));
+
+        // apply movement
+        p.px += p.vx;
+        p.py += p.vy;
+
+        // -------------------------
+        // FOLLOW SHAPE
+        // -------------------------
+
+        let follow = 0.25; // control stickiness
+        p.px += (targetX - p.px) * follow;
+        p.py += (targetY - p.py) * follow;
+
+        // draw
         ctx.fillStyle = "white";
-        ctx.fillRect(x, y, p.size, p.size);
+        ctx.fillRect(p.px, p.py, 1.2, 1.2);
       });
 
       requestAnimationFrame(draw);
