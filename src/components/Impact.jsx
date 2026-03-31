@@ -115,7 +115,7 @@ export default function Impact() {
       <section
         id="impact"
         ref={container}
-        className="light-section text-black h-screen flex items-center justify-center bg-white overflow-hidden"
+        className="light-section text-black h-screen flex items-center justify-center bg-[#fffaf6] overflow-hidden"
       >
         <div className="relative w-full max-w-[1600px] aspect-square sm:aspect-[16/9] mx-auto">
           {/* SVG LAYER */}
@@ -132,7 +132,7 @@ export default function Impact() {
               ry="260"
               stroke="#999"
               strokeWidth="1.5" // Increased thickness for visibility
-              strokeDasharray="4 4" // Larger dashes are easier to see on mobile
+              strokeDasharray="1 4" // Larger dashes are easier to see on mobile
               strokeLinecap="round"
               fill="none"
             />
@@ -141,9 +141,9 @@ export default function Impact() {
             <path
               id="innerPath"
               d="M 490, 400 a 260, 260 0 1, 1 520, 0 a 260, 260 0 1, 1 -520, 0"
-              stroke="#ccc" // Lighter color so it doesn't clash with the ellipse
-              strokeWidth="1.5"
-              strokeDasharray="4 4"
+              stroke="#999" // Lighter color so it doesn't clash with the ellipse
+              strokeWidth="2"
+              strokeDasharray="1 4"
               fill="none"
             />
           </svg>
@@ -204,7 +204,10 @@ export default function Impact() {
       </section>
 
       {/* Impact Content */}
-      <section id="impact" className="light-section text-black relative ">
+      <section
+        id="impact"
+        className=" bg-[#fffaf6] light-section text-black relative "
+      >
         <div className="flex flex-col items-center gap-6 md:gap-16  text-center">
           <span className="rounded-sm border border-black/10 px-3 py-1 text-[11px] md:text-[13px] uppercase">
             Our Impact

@@ -41,13 +41,13 @@ export default function Specifications() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="px-3">
+    <section className="px-3 py-3">
       <section
         id="specifications"
-        className="light-section  text-black bg-[#dff2f3] px-4 sm:px-6 md:px-10 lg:px-12 py-8 md:py-10 mt-10 md:mt-20 rounded-lg max-w-full h-full "
+        className="light-section  text-black bg-[#dff2f3] px-4 sm:px-6 md:px-10 lg:px-10 py-8 md:py-10 mt-10 md:mt-20 rounded max-w-full h-full "
       >
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between gap-6 border-b border-gray-300 pb-6">
+        <div className="flex flex-col md:flex-row md:justify-between gap-10 border-b border-gray-300 pb-6">
           {/* left side content */}
           <div className=" mb-8 md:mb-22 flex items-center gap-4">
             <img
@@ -64,7 +64,7 @@ export default function Specifications() {
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Moisture
               </div>
-              <p className=" text-xs text-gray-500">
+              <p className=" text-xs text-[#0f131a99]">
                 &lt;0.3 g/m2/day WVTR (38°C, 90% RH)
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function Specifications() {
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Oxygen
               </div>
-              <p className="  text-xs text-gray-500">
+              <p className="  text-xs text-[#0f131a99]">
                 &lt;1 cc/m2/day OTR (23°C, 50% RH)
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function Specifications() {
               <div className="bg-[#71cbe1] text-black px-2 py-1 rounded-md font-normal text-xs">
                 Grease
               </div>
-              <p className=" text-xs text-gray-500">
+              <p className=" text-xs text-[#0f131a99]">
                 Excellent resistance to grease and oils
               </p>
             </div>
@@ -96,13 +96,13 @@ export default function Specifications() {
               onClick={() => setOpen(open === index ? null : index)}
             >
               {/* LEFT SIDE (ICON + TITLE) */}
-              <div className="flex items-start gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <img
                   src={item.icon}
                   alt={item.title}
                   className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"
                 />
-                <p className="text-gray-800 text-base sm:text-lg md:text-2xl leading-snug flex-1 ">
+                <p className="text-16 leading-tight md:text-21 ">
                   {item.title}
                 </p>
               </div>

@@ -1,22 +1,40 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MoveLeft, MoveRight, ChevronRight } from "lucide-react";
 
 export default function News() {
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollRef = useRef(null);
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const { current } = scrollRef;
-      const scrollAmount = current.clientWidth * 0.8;
-      // const scrollAmount = 624; // Card width (600) + gap (24)
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-      if (direction === "left") {
-        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
-    }
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    checkScroll(); // initial check
+    el.addEventListener("scroll", checkScroll);
+
+    return () => el.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const scroll = (direction) => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const scrollAmount = el.clientWidth;
+
+    el.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
   const news = [
     {
@@ -95,7 +113,7 @@ export default function News() {
       </div>
 
       {/* 5. Navigation Buttons (Bottom Right) */}
-      <div className="flex justify-end gap-2 mt-8">
+      {/* <div className="flex justify-end gap-2 mt-8">
         <button
           onClick={() => scroll("left")}
           className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -105,6 +123,25 @@ export default function News() {
         <button
           onClick={() => scroll("right")}
           className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <MoveRight size={20} className="text-gray-600" />
+        </button>
+      </div> */}
+      <div className="flex justify-end gap-2 mt-8 mr-4">
+        <button
+          onClick={() => scroll("left")}
+          disabled={!canScrollLeft}
+          className={` cursor-pointer border rounded-md w-10 h-7 flex items-center justify-center transition-colors
+      ${canScrollLeft ? "border-black-300 hover:bg-gray-50" : "border-black-300 opacity-40 "}`}
+        >
+          <MoveLeft size={20} className="text-gray-600" />
+        </button>
+
+        <button
+          onClick={() => scroll("right")}
+          disabled={!canScrollRight}
+          className={`cursor-pointer border rounded-md w-10 h-7 flex items-center justify-center transition-colors
+      ${canScrollRight ? "border-black-300 hover:bg-gray-50" : "border-black-300 opacity-40 "}`}
         >
           <MoveRight size={20} className="text-gray-600" />
         </button>

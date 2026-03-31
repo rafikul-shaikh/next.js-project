@@ -1,10 +1,38 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 
 export default function OurBarrier() {
   const [open, setOpen] = useState(0);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+
+    const interval = setInterval(() => {
+      if (!container) return;
+
+      container.scrollBy({
+        left: container.offsetWidth, // move 1 full section
+        behavior: "smooth",
+      });
+
+      // loop back to start
+      if (
+        container.scrollLeft + container.offsetWidth >=
+        container.scrollWidth
+      ) {
+        container.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }, 8000); // change speed here
+
+    return () => clearInterval(interval);
+  }, []);
 
   const faqs = [
     {
@@ -58,7 +86,10 @@ export default function OurBarrier() {
       </div>
 
       {/* Horizontal Scrolling with snap section */}
-      <section className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar">
+      <section
+        ref={scrollRef}
+        className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar"
+      >
         <div className="min-w-full snap-center px-4 py-20">
           <p className="max-w-4xl text-3xl md:text-5xl font-normal leading-tight">
             {/* mx-auto  */}
