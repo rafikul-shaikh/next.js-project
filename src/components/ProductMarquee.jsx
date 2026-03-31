@@ -60,9 +60,10 @@ export default function ProductMarquee() {
         ].map((img, index) => (
           <div
             key={index}
-            className="min-w-55 sm:min-w-65 md:min-w-[320px] lg:min-w-95 xl:min-w-105
-             h-65 sm:h-75 md:h-95 lg:h-112.5 xl:h-125
-             rounded overflow-hidden "
+            // className="min-w-55 sm:min-w-65 md:min-w-[320px] lg:min-w-95 xl:min-w-105
+            //  h-65 sm:h-75 md:h-95 lg:h-112.5 xl:h-125
+            //  rounded overflow-hidden "
+            className="min-w-55 sm:min-w-65 md:min-w-[320px] lg:min-w-95 xl:min-w-105 h-65 sm:h-75 md:h-95 lg:h-112.5 xl:h-125  rounded overflow-hidden"
           >
             <img
               src={`/image/${img}`}

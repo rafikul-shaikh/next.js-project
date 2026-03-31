@@ -1,6 +1,7 @@
 
 "use client";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
@@ -11,7 +12,9 @@ import Specifications from "@/components/Specifications";
 import News from "@/components/News";
 import About from "@/components/About";
 import OurBarrier from "@/components/OurBarrier";
-import Impact from "@/components/Impact";
+const Impact = dynamic(() => import("@/components/Impact"), {
+  ssr: false,
+});
 import { useState } from "react";
 import ContactDrawer from "@/components/ContactDrawer";
 

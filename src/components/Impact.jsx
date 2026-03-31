@@ -33,32 +33,30 @@ export default function Impact() {
       const arrows = gsap.utils.toArray(".innerArrow");
       const texts = gsap.utils.toArray(".impactText");
 
-      gsap.set(".impactText", {
-        opacity: 0,
-        y: 60, // start from bottom
-      });
+      // Initial hidden state
+      gsap.set(".impactText", { opacity: 0, y: 40 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
           start: "top top",
-          end: "+=2500",
+          end: "+=3000", // Increased for smoother scroll
           scrub: true,
           pin: true,
+          invalidateOnRefresh: true,
         },
       });
 
-      // ARROW ROTATION
+      // 1. ARROW ROTATION (Duration set to 3)
       arrows.forEach((arrow, i) => {
-        gsap.set(arrow, { xPercent: -50, yPercent: -50 });
-
+        gsap.set(arrow, { x: 0, y: 0, xPercent: -50, yPercent: -50 });
         tl.to(
           arrow,
           {
             motionPath: {
               path: "#innerPath",
               align: "#innerPath",
-              autoRotate: true,
+              autoRotate: 90,
               alignOrigin: [0.5, 0.5],
               start: i * 0.25,
               end: 1 + i * 0.25,
@@ -67,34 +65,44 @@ export default function Impact() {
             duration: 3,
           },
           0,
-        );
+        ); // All arrows start at time 0
       });
 
-      // TEXT CHANGE animation (runs together with rotation)
+      // 2. TEXT CHANGE (Synchronized with the 3s duration)
+      // We divide the 3s total duration by the number of text items
+
+      gsap.set(texts[0], { opacity: 1, y: 0 });
+
+      const segmentDuration = 3 / texts.length;
 
       texts.forEach((text, i) => {
+        const startTime = i * segmentDuration;
+
         tl.fromTo(
           text,
           {
+            // 2. Checking if it's the first item
             opacity: i === 0 ? 1 : 0,
-            y: i === 0 ? 0 : 60,
+            y: i === 0 ? 0 : 40,
           },
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power3.out",
+            duration: segmentDuration * 0.4,
+            ease: "power2.out",
+            // 3. Prevents the timeline from hiding the first item immediately
+            immediateRender: false,
           },
-          i * 1.2,
+          startTime,
         ).to(
           text,
           {
             opacity: 0,
-            y: -60,
-            duration: 0.6,
-            ease: "power3.in",
+            y: -40,
+            duration: segmentDuration * 0.4,
+            ease: "power2.in",
           },
-          i * 1.2 + 0.6,
+          startTime + segmentDuration * 0.6,
         );
       });
     }, container);
@@ -107,74 +115,60 @@ export default function Impact() {
       <section
         id="impact"
         ref={container}
-        className=" light-section  text-black bg-white h-screen  flex items-center justify-center "
-        // h-[200vh
+        className="light-section text-black h-screen flex items-center justify-center bg-white overflow-hidden"
       >
-        <div className=" relative w-full max-w-400 aspect-square sm:aspect-[16/9] mt-[-40px] md:mt-[-15px] mx-auto overflow-hidden">
-          {/* SVG ORBITS */}
+        <div className="relative w-full max-w-[1600px] aspect-square sm:aspect-[16/9] mx-auto">
+          {/* SVG LAYER */}
           <svg
-            className="absolute left-1/2 -translate-x-1/2 w-[140%] sm:w-[110%] md:w-full h-full"
+            className="absolute left-1/2 -translate-x-1/2 w-full h-full overflow-visible"
             viewBox="0 0 1500 800"
             preserveAspectRatio="xMidYMid meet"
           >
-            {/* OUTER ELLIPSE */}
+            {/* OUTER ELLIPSE - Made slightly smaller (700) to avoid edge clipping */}
             <ellipse
               cx="750"
               cy="400"
-              rx="720"
+              rx="700"
               ry="260"
               stroke="#999"
-              strokeDasharray="1 3"
+              strokeWidth="1.5" // Increased thickness for visibility
+              strokeDasharray="4 4" // Larger dashes are easier to see on mobile
               strokeLinecap="round"
               fill="none"
             />
 
-            {/* INNER CIRCLE PATH */}
-
+            {/* INNER CIRCLE PATH - This is what the arrows follow */}
             <path
               id="innerPath"
-              d="M750,400 m-260,0 a260,260 0 1,1 520,0 a260,260 0 1,1 -520,0"
-              stroke="#999"
-              strokeDasharray="1 3"
-              strokeLinecap="round"
+              d="M 490, 400 a 260, 260 0 1, 1 520, 0 a 260, 260 0 1, 1 -520, 0"
+              stroke="#ccc" // Lighter color so it doesn't clash with the ellipse
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
               fill="none"
             />
           </svg>
-
-          {/* ARROWS */}
+          {/* ARROW LAYER - Must match SVG exactly */}
           <div className="absolute inset-0 pointer-events-none">
-            <div
-              className="innerArrow absolute text-xl"
-              style={{ top: "50%", left: "50%" }}
-            >
+            <div className="innerArrow absolute text-[10px] sm:text-xs md:text-xl">
               ▲
             </div>
-            <div
-              className="innerArrow absolute text-xl"
-              style={{ top: "50%", left: "50%" }}
-            >
+            <div className="innerArrow absolute text-[10px] sm:text-xs md:text-xl">
               ▲
             </div>
-            <div
-              className="innerArrow absolute text-xl"
-              style={{ top: "50%", left: "50%" }}
-            >
+            <div className="innerArrow absolute text-[10px] sm:text-xs md:text-xl">
               ▲
             </div>
-            <div
-              className="innerArrow absolute text-xl"
-              style={{ top: "50%", left: "50%" }}
-            >
+            <div className="innerArrow absolute text-[10px] sm:text-xs md:text-xl">
               ▲
             </div>
           </div>
 
-          {/* CENTER TEXT */}
-
-          <div
-            className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-105 -translate-x-1/2 -translate-y-1/2
-               text-center px-4 sm:px-6 md:px-8 flex items-center justify-center"
-          >
+          {/* CONTENT LAYER */}
+          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px]"> */}
+          {/* Your texts.map logic here */}
+          {/* </div> */}
+          <div className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px] -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center">
+            {/* className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px] -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center" */}
             {texts.map((item, index) => (
               <div
                 key={index}
@@ -192,7 +186,7 @@ export default function Impact() {
                   </div>
 
                   {/* TITLE */}
-                  <h2 className="w-full max-w-45 sm:max-w-50 md:max-w-60 text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
+                  <h2 className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[240px] text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
                     {item.title}
                   </h2>
 
@@ -209,6 +203,7 @@ export default function Impact() {
         </div>
       </section>
 
+      {/* Impact Content */}
       <section id="impact" className="light-section text-black relative ">
         <div className="flex flex-col items-center gap-6 md:gap-16  text-center">
           <span className="rounded-sm border border-black/10 px-3 py-1 text-[11px] md:text-[13px] uppercase">

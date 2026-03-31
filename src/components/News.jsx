@@ -65,9 +65,7 @@ export default function News() {
         {news.map((item, index) => (
           <div
             key={index}
-            className="group min-w-70 sm:min-w-87.5 md:min-w-112.5 lg:min-w-150
-               h-90 sm:h-105 md:h-130 lg:h-175
-             rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer"
+            className={`group min-w-70 sm:min-w-87.5 md:min-w-112.5 lg:min-w-150 h-90 sm:h-105 md:h-130 lg:h-175 rounded-lg overflow-hidden relative transform transition duration-500 cursor-pointer`}
           >
             {/* Image */}
             <img
