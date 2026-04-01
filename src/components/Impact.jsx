@@ -41,8 +41,9 @@ export default function Impact() {
           trigger: container.current,
           start: "top top",
           end: "+=3000", // Increased for smoother scroll
-          scrub: true,
+          scrub: 1,
           pin: true,
+          anticipatePin: 1,
           invalidateOnRefresh: true,
         },
       });
@@ -81,7 +82,6 @@ export default function Impact() {
         tl.fromTo(
           text,
           {
-            // 2. Checking if it's the first item
             opacity: i === 0 ? 1 : 0,
             y: i === 0 ? 0 : 40,
           },
@@ -90,20 +90,24 @@ export default function Impact() {
             y: 0,
             duration: segmentDuration * 0.4,
             ease: "power2.out",
-            // 3. Prevents the timeline from hiding the first item immediately
             immediateRender: false,
           },
           startTime,
-        ).to(
-          text,
-          {
-            opacity: 0,
-            y: -40,
-            duration: segmentDuration * 0.4,
-            ease: "power2.in",
-          },
-          startTime + segmentDuration * 0.6,
         );
+
+        // ❗ Only add fade-out if NOT last item
+        if (i !== texts.length - 1) {
+          tl.to(
+            text,
+            {
+              opacity: 0,
+              y: -40,
+              duration: segmentDuration * 0.4,
+              ease: "power2.in",
+            },
+            startTime + segmentDuration * 0.6,
+          );
+        }
       });
     }, container);
 
@@ -117,7 +121,7 @@ export default function Impact() {
         ref={container}
         className="light-section text-black h-screen flex items-center justify-center bg-[#fffaf6] overflow-hidden"
       >
-        <div className="relative w-full max-w-[1600px] aspect-square sm:aspect-[16/9] mx-auto">
+        <div className="relative w-full max-w-400 aspect-square sm:aspect-[16/9] mx-auto">
           {/* SVG LAYER */}
           <svg
             className="absolute left-1/2 -translate-x-1/2 w-full h-full overflow-visible"
@@ -164,41 +168,80 @@ export default function Impact() {
           </div>
 
           {/* CONTENT LAYER */}
-          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px]"> */}
-          {/* Your texts.map logic here */}
-          {/* </div> */}
-          <div className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px] -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center">
-            {/* className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-[420px] -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center" */}
+
+          {/* <div className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-105 -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center">
             {texts.map((item, index) => (
               <div
                 key={index}
                 className="impactText absolute inset-0 opacity-0 flex items-center justify-center"
               >
-                <div className="-mt-6 w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 text-center scale-[0.85] sm:scale-[0.9] md:scale-100 lg:scale-105 xl:scale-110">
-                  {/* ICON */}
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                <div className="-mt-6 w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 text-center scale-[0.85] sm:scale-[0.9] md:scale-100 lg:scale-105 xl:scale-110"> */}
+          {/* ICON */}
+          {/* <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                     <img
                       src={item.Icon}
                       alt=""
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
-                  </div>
+                  </div> */}
 
-                  {/* TITLE */}
-                  <h2 className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[240px] text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
+          {/* TITLE */}
+          {/* <h2 className="w-full max-w-45 sm:max-w-50 md:max-w-60 text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
                     {item.title}
-                  </h2>
+                  </h2> */}
 
-                  {/* DESCRIPTION */}
-                  <div className="w-full max-w-[85%] sm:max-w-[75%] md:max-w-[65%]">
+          {/* DESCRIPTION */}
+          {/* <div className="w-full max-w-[85%] sm:max-w-[75%] md:max-w-[65%]">
                     <p className="text-[10px] sm:text-[11px] md:text-[13px] text-gray-500 my-2 sm:my-3 md:my-4">
                       {item.desc}
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
+          {/*               
             ))}
+          </div> */}
+          {/* CONTENT LAYER */}
+          {/* CONTENT LAYER - Proportional Safe Zone */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="relative w-[60vw] sm:w-[50vw] md:w-[40vw] max-w-[380px] aspect-square flex items-center justify-center -mt-8 sm:-mt-12 md:-mt-16">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {texts.map((item, index) => (
+                  <div
+                    key={index}
+                    className="impactText absolute inset-0 opacity-0 flex flex-col items-center justify-center text-center px-[10%]"
+                  >
+                    {/* ICON - Scaled as a percentage of the box */}
+                    <div className="w-[15%] min-w-[24px] max-w-[40px] mb-[5%] flex-shrink-0">
+                      <img
+                        src={item.Icon}
+                        alt=""
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* TITLE - Fluid font size for tiny screens */}
+                    <h2 className="w-full text-[1.8vw] sm:text-[1vw] md:text-[22px] font-bold leading-[1.1] mb-[4%]">
+                      {item.title}
+                    </h2>
+
+                    {/* DESCRIPTION - Smallest font + Line Clamp */}
+                    {/* <div className="w-full">
+                      <p className="text-[1vw] sm:text-[1vw] md:text-[14px] text-gray-500 leading-snug line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
+                        {item.desc}
+                      </p>
+                    </div> */}
+                    {/* DESCRIPTION - Restricted width and fluid font */}
+                    <div className="w-full max-w-[85%] mx-auto">
+                      <p className="text-[clamp(4px,1.5vw,14px)] text-gray-500 leading-tight line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

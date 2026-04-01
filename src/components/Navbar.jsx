@@ -35,12 +35,12 @@ export default function Navbar({ openContact }) {
       }`}
     >
       <nav className=" flex items-center justify-between">
-        <Link href="/" className="">
+        <Link href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 161 19"
-            className="w-32 md:w-42 cursor-pointer"
+            className="w-24 xs:w-28 sm:w-32 md:w-37 shrink-0 cursor-pointer"
           >
             <path
               fillRule="evenodd"
@@ -52,8 +52,8 @@ export default function Navbar({ openContact }) {
         </Link>
 
         {/* RIGHT SIDE */}
-        <div className=" font-[mainFont]  flex items-center gap-4 md:gap-11">
-          <div className="hidden md:flex items-center gap-11 text-[13px] font-normal tracking-wide">
+        <div className=" font-[mainFont]  flex items-center gap-2 sm:gap-3 md:gap-6">
+          <div className="hidden md:flex items-center gap-10 text-[12px] font-normal tracking-wide">
             <a href="#specifications" className="relative pb-1 group">
               Specifications
               <span className="absolute left-0 bottom-0 h-px w-full bg-current scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></span>
@@ -80,11 +80,18 @@ export default function Navbar({ openContact }) {
             </a>
           </div>
 
-          <button
+          {/* <button
             onClick={() => setOpen(true)}
             className=" md:w-27 h-9 md:h-12 px-5  text-[13px] bg-[#dff2f3] cursor-pointer text-black hover:bg-black hover:text-white transition-all duration-300 rounded"
           >
             Contact us
+          </button> */}
+          <button
+            onClick={() => setOpen(true)}
+            className=" shrink-0 h-8 sm:h-7 md:h-11 px-2 sm:px-3 md:px-4 text-[11px] sm:text-xs md:text-[13px] bg-[#dff2f3] text-black hover:bg-black hover:text-white transition-all duration-300 rounded whitespace-nowrap"
+          >
+            Contact us
+            <span className="hidden xs:inline"> us</span>
           </button>
         </div>
       </nav>

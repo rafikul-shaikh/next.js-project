@@ -113,20 +113,6 @@ export default function News() {
       </div>
 
       {/* 5. Navigation Buttons (Bottom Right) */}
-      {/* <div className="flex justify-end gap-2 mt-8">
-        <button
-          onClick={() => scroll("left")}
-          className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
-        >
-          <MoveLeft size={20} className="text-gray-600" />
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="border border-gray-300 rounded-md w-12 h-9 flex items-center justify-center hover:bg-gray-50 transition-colors"
-        >
-          <MoveRight size={20} className="text-gray-600" />
-        </button>
-      </div> */}
       <div className="flex justify-end gap-2 mt-8 mr-4">
         <button
           onClick={() => scroll("left")}
