@@ -70,7 +70,6 @@ export default function Impact() {
       });
 
       // 2. TEXT CHANGE (Synchronized with the 3s duration)
-      // We divide the 3s total duration by the number of text items
 
       gsap.set(texts[0], { opacity: 1, y: 0 });
 
@@ -119,23 +118,28 @@ export default function Impact() {
       <section
         id="impact"
         ref={container}
-        className="light-section text-black h-screen flex items-center justify-center bg-[#fffaf6] overflow-hidden"
+        className="light-section text-black h-screen flex items-center justify-center bg-[#fffaf6] overflow-hidden relative"
       >
-        <div className="relative w-full max-w-400 aspect-square sm:aspect-[16/9] mx-auto">
+        <div className="relative w-full h-full mx-auto">
           {/* SVG LAYER */}
+          {/* <svg
+            className="absolute top-1/2 left-1/2 w-[180vw] h-[180vw] sm:w-full sm:h-full -translate-x-1/2 -translate-y-1/2"
+            viewBox="0 0 1500 800"
+            preserveAspectRatio="xMidYMid meet"
+          > */}
           <svg
-            className="absolute left-1/2 -translate-x-1/2 w-full h-full overflow-visible"
+            className="absolute top-1/2 left-1/2 w-[260vw] h-[260vw] sm:w-full sm:h-full -translate-x-1/2 -translate-y-1/2"
             viewBox="0 0 1500 800"
             preserveAspectRatio="xMidYMid meet"
           >
-            {/* OUTER ELLIPSE - Made slightly smaller (700) to avoid edge clipping */}
+            {/* OUTER ELLIPSE  */}
             <ellipse
               cx="750"
               cy="400"
-              rx="700"
-              ry="260"
+              rx="750"
+              ry="300"
               stroke="#999"
-              strokeWidth="1.5" // Increased thickness for visibility
+              strokeWidth="2.5" // Increased thickness for visibility
               strokeDasharray="1 4" // Larger dashes are easier to see on mobile
               strokeLinecap="round"
               fill="none"
@@ -144,13 +148,14 @@ export default function Impact() {
             {/* INNER CIRCLE PATH - This is what the arrows follow */}
             <path
               id="innerPath"
-              d="M 490, 400 a 260, 260 0 1, 1 520, 0 a 260, 260 0 1, 1 -520, 0"
+              d="M 450, 400 a 300, 300 0 1, 1 600, 0 a 300, 300 0 1, 1 -600, 0"
               stroke="#999" // Lighter color so it doesn't clash with the ellipse
-              strokeWidth="2"
-              strokeDasharray="1 4"
+              strokeWidth="2.5"
+              strokeDasharray="2 3"
               fill="none"
             />
           </svg>
+
           {/* ARROW LAYER - Must match SVG exactly */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="innerArrow absolute text-[10px] sm:text-xs md:text-xl">
@@ -168,79 +173,36 @@ export default function Impact() {
           </div>
 
           {/* CONTENT LAYER */}
-
-          {/* <div className="absolute top-1/2 left-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[38%] xl:w-[28%] max-w-105 -translate-x-1/2 -translate-y-1/2 text-center px-4 sm:px-6 md:px-8 flex items-center justify-center">
-            {texts.map((item, index) => (
-              <div
-                key={index}
-                className="impactText absolute inset-0 opacity-0 flex items-center justify-center"
-              >
-                <div className="-mt-6 w-full flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 text-center scale-[0.85] sm:scale-[0.9] md:scale-100 lg:scale-105 xl:scale-110"> */}
-          {/* ICON */}
-          {/* <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] 
+          sm:w-[60%] md:w-[45%] lg:w-[35%] [420px] aspect-square flex items-center justify-center pointer-events-none"
+          >
+            <div className="relative w-full h-full flex items-center justify-center">
+              {texts.map((item, index) => (
+                <div
+                  key={index}
+                  className="impactText absolute inset-0 opacity-0 flex flex-col items-center justify-center text-center px-3 sm:px-4"
+                >
+                  {/* ICON */}
+                  <div className="w-[28px] h-[28px] sm:w-[32px] sm:h-[32px] md:w-[36px] md:h-[36px] mb-3">
                     <img
                       src={item.Icon}
                       alt=""
-                      className="w-full h-full object-cover"
-                      loading="lazy"
+                      className="w-full h-full object-contain"
                     />
-                  </div> */}
+                  </div>
 
-          {/* TITLE */}
-          {/* <h2 className="w-full max-w-45 sm:max-w-50 md:max-w-60 text-[13px] sm:text-[15px] md:text-[18px] lg:text-[21px] leading-snug wrap-break-word">
+                  {/* TITLE */}
+                  <h2 className="font-normal leading-tight mb-2 text-[clamp(14px,2.2vw,22px)]  max-w-[280px]">
                     {item.title}
-                  </h2> */}
+                  </h2>
 
-          {/* DESCRIPTION */}
-          {/* <div className="w-full max-w-[85%] sm:max-w-[75%] md:max-w-[65%]">
-                    <p className="text-[10px] sm:text-[11px] md:text-[13px] text-gray-500 my-2 sm:my-3 md:my-4">
-                      {item.desc}
-                    </p>
-                  </div>
+                  {/* DESCRIPTION */}
+                  <p className="text-gray-500 leading-snug text-[clamp(10px,1.8vw,14px)] sm:maxw-[200px] md:maxw-[400px]">
+                    {item.desc}
+                  </p>
                 </div>
-              </div> */}
-          {/*               
-            ))}
-          </div> */}
-          {/* CONTENT LAYER */}
-          {/* CONTENT LAYER - Proportional Safe Zone */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="relative w-[60vw] sm:w-[50vw] md:w-[40vw] max-w-[380px] aspect-square flex items-center justify-center -mt-8 sm:-mt-12 md:-mt-16">
-              <div className="relative w-full h-full flex items-center justify-center">
-                {texts.map((item, index) => (
-                  <div
-                    key={index}
-                    className="impactText absolute inset-0 opacity-0 flex flex-col items-center justify-center text-center px-[10%]"
-                  >
-                    {/* ICON - Scaled as a percentage of the box */}
-                    <div className="w-[15%] min-w-[24px] max-w-[40px] mb-[5%] flex-shrink-0">
-                      <img
-                        src={item.Icon}
-                        alt=""
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-
-                    {/* TITLE - Fluid font size for tiny screens */}
-                    <h2 className="w-full text-[1.8vw] sm:text-[1vw] md:text-[22px] font-bold leading-[1.1] mb-[4%]">
-                      {item.title}
-                    </h2>
-
-                    {/* DESCRIPTION - Smallest font + Line Clamp */}
-                    {/* <div className="w-full">
-                      <p className="text-[1vw] sm:text-[1vw] md:text-[14px] text-gray-500 leading-snug line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
-                        {item.desc}
-                      </p>
-                    </div> */}
-                    {/* DESCRIPTION - Restricted width and fluid font */}
-                    <div className="w-full max-w-[85%] mx-auto">
-                      <p className="text-[clamp(4px,1.5vw,14px)] text-gray-500 leading-tight line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>

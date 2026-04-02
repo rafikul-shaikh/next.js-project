@@ -91,7 +91,7 @@ export default function OurBarrier() {
         className="light-section bg-white text-black flex overflow-x-auto snap-x snap-mandatory font-normal w-full scroll-smooth no-scrollbar"
       >
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-4xl text-3xl md:text-5xl font-normal leading-tight">
+          <p className="max-w-4xl sm:text-3xl md:text-5xl font-normal leading-tight">
             {/* mx-auto  */}
             "Nfinite shares our commitment to creating a circular economy, and
             we look forward to continuing to work with them to develop
@@ -105,7 +105,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-4xl  text-3xl md:text-5xl font-normal leading-tight">
+          <p className="max-w-4xl  sm:text-3xl md:text-5xl font-normal leading-tight">
             "PepsiCo R&D started working with the Nfinite team while they were
             at the University of Waterloo, and in the short span of two years,
             they have made rapid progress from lab-scale technology to actual
@@ -119,7 +119,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl  text-3xl md:text-5xl font-normal leading-tight">
+          <p className="max-w-3xl  sm:text-3xl md:text-5xl font-normal leading-tight">
             "Amcor is excited to be both an early-stage investor and a strategic
             collaboration partner to Nfinite on this ground breaking project."
           </p>
@@ -131,7 +131,7 @@ export default function OurBarrier() {
           </div>
         </div>
         <div className="min-w-full snap-center px-4 py-20">
-          <p className="max-w-3xl text-3xl md:text-5xl font-normal leading-tight">
+          <p className="max-w-3xl sm:text-3xl md:text-5xl font-normal leading-tight">
             "We are collaborating with partners like Nfinite to develop the next
             generation of recyclable and compostable flexible packaging with
             ultra-thin barrier coatings that meet the performance needs of our
@@ -156,7 +156,7 @@ export default function OurBarrier() {
                 FAQ
               </span>
 
-              <h2 className="text-4xl mt-8 leading-tight font-medium">
+              <h2 className="mt-6 sm:mt-8 leading-tight font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                 Here are the essentials about Nfinite paper, how it works, and
                 how it replaces plastic.
               </h2>
@@ -172,8 +172,10 @@ export default function OurBarrier() {
                 className=" cursor-pointer border-b border-gray-300"
               >
                 {/* button */}
-                <div className="w-full flex justify-between items-center px-10 py-6 md:py-10 text-left">
-                  <span className="text-xl ">{item.question}</span>
+                <div className="w-full flex justify-between items-center px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-10 text-left">
+                  <span className="text-base sm:text-lg md:text-xl pr-4">
+                    {item.question}
+                  </span>
 
                   <ChevronDown
                     className={`transition-transform duration-300 ${
