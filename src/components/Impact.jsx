@@ -63,7 +63,7 @@ export default function Impact() {
               end: 1 + i * 0.25,
             },
             ease: "none",
-            duration: 3,
+            duration: 4,
           },
           0,
         ); // All arrows start at time 0
